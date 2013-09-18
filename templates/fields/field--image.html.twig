@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * For example, for a field named 'body' displayed on the 'article' content
+ * type, any of the following templates will override this default
+ * implementation. The first of these templates that exists is used:
+ * - field--body--article.html.twig
+ * - field--article.html.twig
+ * - field--body.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - content_attributes: HTML attributes for the content.
+ * - items: List of all the field items.
+ * - item_attributes: List of HTML attributes for each item.
+ *
+ * @see template_preprocess_field()
+ * @see theme_field()
+ *
+ * @ingroup themeable
+ */
+  {{ attributes }}
+#}
+
+{# title wtf is this called label btw #}
+{% if not label_hidden %}
+  <h3 {{ title_attributes }}>{{ label }}:&nbsp;</h3>
+{% endif %}
+
+{% for delta, item in items %}
+  {# get the title of the image #}
+
+{% set figcaption = item.alt %}
+
+  {% if loop.length > 1 %} {# no wrappers if theres only 1 item#}
+    <section class="images" {{ content_attributes }}> {# wanna do a print all attributes but no class #}
+  {% endif %}
+
+   <h2>{{ figcaption }}</h2>
+
+  <figure class="image {{ cycle(["even", "odd"], delta) }}"{{ item_attributes[delta] }}>
+    <figcaption> {{ item.alt }} </figcaption>
+
+  {{ item }}
+  </figure>
+
+ {% if loop.length > 1 %}
+    </section>
+  {% endif %}
+{% endfor %}

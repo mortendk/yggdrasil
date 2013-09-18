@@ -88,11 +88,25 @@
 {% if teaser %}
 {# teaser #}
   <footer>
-    submitted by <span class="icon icon-user">{{ node.name }}</span>
+    {% trans %}
+      posted by
+    {% endtrans %}
+    <span class="icon icon-user">{{ node.name }}</span>
+
     <time class="icon icon-time" datetime="{{ node.createdtime|date("Y-m-d H:i") }}">
       {{ node.createdtime|date("d M Y") }}
     </time>
-    <span class="icon icon-comments">{{ node.comment_count }} comments</span>
+
+    <span class="icon icon-comments">
+      {# simple logic #}
+      {% if node.comment_count > 1 %}
+        No comments sir
+      {% else %}
+        {{ node.comment_count }} comments
+      {% endif %}
+
+    </span>
+
   </footer>
 
   <div{{ content_attributes }}>
