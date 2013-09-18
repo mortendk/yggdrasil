@@ -1,0 +1,24 @@
+<section class="tags">
+  {# split the tags  #}
+  {% for delta, item in items %}
+
+  <span class="{{ cycle(["even", "odd"], delta) }} count-{{ loop.index }}">
+    {% if loop.first %}
+
+    {{ loop.length }} tags: {{ item }},
+
+    {% elseif loop.index == 2 %}
+      TWO: {{ item }},
+
+    {% elseif loop.last %}
+      last:{{ item }}
+
+    {% else %}
+      {{ item }} ,
+
+    {% endif %}
+
+  </span>
+  {% endfor %}
+
+</section>

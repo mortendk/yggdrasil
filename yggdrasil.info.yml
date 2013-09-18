@@ -1,0 +1,39 @@
+name: Yggdrasil
+type: theme
+description: twig + drupal + love = Yggdrasil
+package: Core
+core: 8.x
+
+stylesheets:
+  all:
+    - css/layout.css
+  print:
+    - css/print.css
+#ckeditor_stylesheets:
+#  - css/ckeditor-iframe.css
+
+# Override a CSS file:
+#stylesheets-override:
+#  - filenameiwannaoverwrite.css
+
+# Remove a CSS file:
+stylesheets-remove:
+  - system.theme.css
+#  - diediediede.css
+
+regions:
+  header: Header
+  logo: Logo
+  menu: Menu
+  messages: Messages
+  social: Social
+  featured: featured
+  content_pre: Content Pre
+  content: Content
+  content_post: Content post
+  footer: Footer
+
+settings:
+#  shortcut_module_link: '0'
+
+# engine: phptemplate //if you dont like progress ;)

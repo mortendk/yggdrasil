@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Stark theme.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ *
+ * Adds body classes if certain regions have content.
+ */
+function yggdrasil_preprocess_html(&$variables) {
+  // kpr($variables);
+  // Add information about the number of sidebars.
+  // if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+  //   $variables['attributes']['class'][] = 'two-sidebars';
+  // }
+  // elseif (!empty($variables['page']['sidebar_first'])) {
+  //   $variables['attributes']['class'][] = 'one-sidebar';
+  //   $variables['attributes']['class'][] = 'sidebar-first';
+  // }
+  // elseif (!empty($variables['page']['sidebar_second'])) {
+  //   $variables['attributes']['class'][] = 'one-sidebar';
+  //   $variables['attributes']['class'][] = 'sidebar-second';
+  // }
+  // else {
+  //   $variables['attributes']['class'][] = 'no-sidebars';
+  // }
+}
+
+function yggdrasil_preprocess_block(&$variables) {
+  //kpr($variables);
+  //theme hook suggestions?
+}
+
+
+function yggdrasil_preprocess_node(&$variables) {
+  // kpr($variables);
+  //theme hook suggestions?
+}
+
