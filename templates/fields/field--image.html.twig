@@ -46,12 +46,12 @@
     <section class="images" {{ content_attributes }}> {# wanna do a print all attributes but no class #}
   {% endif %}
 
-   <h2>{{ figcaption }}</h2>
+  <h2>{{ figcaption }}</h2>
 
   <figure class="image {{ cycle(["even", "odd"], delta) }}"{{ item_attributes[delta] }}>
     <figcaption> {{ item.alt }} </figcaption>
 
-  {{ item }}
+    {{ item }}
   </figure>
 
  {% if loop.length > 1 %}

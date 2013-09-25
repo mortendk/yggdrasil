@@ -52,15 +52,21 @@
   {{ is_front }}
   {{ logged_in }}
   {{ is_admin }}
-#}
-
   {% if is_front %}
     <h1> front!! </h1>
   {% endif %}
+#}
+
+{# blocks #}
+  {% block headerblock %}
+    Change me if im on the frontpage
+  {% endblock %}
+{# / blocks #}
 
   <header role="banner">
     {{ page.header }}
   </header>
+
 
   <main role="main">
     <a id="main-content"></a>{# link is in html.html.twig #}

@@ -18,23 +18,20 @@
   <h3>{{ title }}</h3>
 {% endif %}
 
-{# created the loop #}
+
 {% for delta, row in rows %}
-
 {# would be sweet to create all the class bs here as we need it
-  views-row views-row-1 views-row-odd views-row-first
-#}
-
-{% set foo %}
-count-{{ loop.index }}
-{{ cycle(["even", "odd"], delta) }}
-{% if loop.first %}first{% endif %}
+  views-row views-row-1 views-row-odd views-row-first #}
+{% set classes %}
+{% spaceless %}
+ count-{{ loop.index }}
+ {{ cycle(["even", "odd"], delta) }}
+ {% if loop.first %} the-first{% endif %}
+ {% if loop.last %} the-last{% endif %}
+{% endspaceless %}
 {% endset %}
 
-{{ foo }}
-
-
-  <div class=" "{{ row.attributes }}>
+  <div class="{{ classes|replace({'\n':''}) }}" {{ row.attributes }}>
     {{ row.content }}
   </div>
 {% endfor %}

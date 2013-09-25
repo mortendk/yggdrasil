@@ -9,17 +9,17 @@ stylesheets:
     - css/layout.css
   print:
     - css/print.css
+
+  stylesheets-remove:
+    - system.theme.css
+    - user.icons.css
+
 #ckeditor_stylesheets:
 #  - css/ckeditor-iframe.css
 
 # Override a CSS file:
 #stylesheets-override:
 #  - filenameiwannaoverwrite.css
-
-# Remove a CSS file:
-stylesheets-remove:
-  - system.theme.css
-#  - diediediede.css
 
 regions:
   header: Header

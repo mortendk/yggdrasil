@@ -29,17 +29,24 @@
 
 #}
 <!DOCTYPE html>
-<html class="{{ html_attributes.class }}" {{ html_attributes }}>
+<html class="foo {{ html_attributes.class }}" {{ html_attributes }}>
   <head>
     {{ head }}
     <title>{{ head_title }}</title>
     {{ styles }}
     {{ scripts }}
   </head>
-  <body class="{{ attributes.class }} " {{ attributes }}>
+  <body class="foobar {{ attributes.class }} " {{ attributes }}>
     <a href="#main-content" class="visually-hidden focusable">
       {{ 'Skip to main content'|t }}
     </a>
+
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+  </body>
+</html>
+
 
   {# login stuff #}
   {% filter upper %}
@@ -49,9 +56,3 @@
   {{ user.init }}
   {% endfilter %}
   {# login stuff #}
-
-    {{ page_top }}
-    {{ page }}
-    {{ page_bottom }}
-  </body>
-</html>

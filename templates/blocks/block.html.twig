@@ -44,7 +44,8 @@
 #}
 
 
-<section class="{{ attributes.class |replace( {'block-': '', 'block': '', 'system': '' }) }} {{ attributes.id}} " role="{{ attributes.role}}">
+<section class="{{ attributes.class |replace( {'block': '' }) }}
+{{ attributes.id}} " role="{{ attributes.role}}">
 
   {{ title_prefix }}
   {% if label %}

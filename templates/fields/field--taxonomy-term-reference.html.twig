@@ -1,24 +1,36 @@
-<section class="tags">
-  {# split the tags  #}
-  {% for delta, item in items %}
+<section class="terms">
+{% spaceless %}
+{% for delta, item in items %}
 
-  <span class="{{ cycle(["even", "odd"], delta) }} count-{{ loop.index }}">
-    {% if loop.first %}
+  {% set class %}
+   {{- cycle(["even", "odd"], delta) }} count-{{ loop.index -}}
+  {% endset %}
 
-    {{ loop.length }} tags: {{ item }},
-
-    {% elseif loop.index == 2 %}
-      TWO: {{ item }},
-
-    {% elseif loop.last %}
-      last:{{ item }}
-
-    {% else %}
-      {{ item }} ,
-
+  {% if loop.first %}
+    {# set tags / tag #}
+    {% if loop.length > 1 %} {{ loop.length }} tags:
+    {% else %} {{ loop.length }} tag:
     {% endif %}
-
-  </span>
-  {% endfor %}
-
+    <a href="{{ url(item['#href']) }}" class="{{ class }}">{{ item['#title']}}</a>
+  {% elseif loop.index == 2 %} {# 2 loop #}
+    <a href="{{ url(item['#href']) }}" class="italic {{ class }}">{{ item['#title']}}</a>,
+  {% elseif loop.last %} {# dot for the last term #}
+    <a href="{{ url(item['#href']) }}" class="{{ class }}">{{ item['#title']}}</a>.
+  {% else %}
+    <a href="{{ url(item['#href']) }}" class="{{ class }}">{{ item['#title']}}</a>,
+  {% endif %}
+{% endfor %}
+{% endspaceless %}
 </section>
+
+
+    {# url function explained #}
+
+
+
+{# inline template
+  {% inline_template 'tags' item %}
+    {{ tags.title }}
+    {{ tags.url }}
+  {% end_inline_template %}
+ / inline template #}
