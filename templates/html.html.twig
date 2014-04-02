@@ -36,7 +36,7 @@
     {{ styles }}
     {{ scripts }}
   </head>
-  <body class="foobar {{ attributes.class }} " {{ attributes }}>
+  <body class="{{ attributes.class }} " {{ attributes }}>
     <a href="#main-content" class="visually-hidden focusable">
       {{ 'Skip to main content'|t }}
     </a>
@@ -46,13 +46,3 @@
     {{ page_bottom }}
   </body>
 </html>
-
-
-  {# login stuff #}
-  {% filter upper %}
-   username : {{ user.name }}
-   login: <time datetime="{{ user.login|date("Y-m-d H:i") }}">{{ user.login|date("d.M Y") }}</time>
-   created: <time datetime="{{ user.created|date("Y-m-d H:i") }}">{{ user.created|date("d.M Y") }}</time>
-  {{ user.init }}
-  {% endfilter %}
-  {# login stuff #}

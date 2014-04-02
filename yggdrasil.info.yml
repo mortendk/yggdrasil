@@ -14,11 +14,11 @@ stylesheets:
     - system.theme.css
     - user.icons.css
 
-#ckeditor_stylesheets:
+# ckeditor_stylesheets:
 #  - css/ckeditor-iframe.css
 
 # Override a CSS file:
-#stylesheets-override:
+# stylesheets-override:
 #  - filenameiwannaoverwrite.css
 
 regions:

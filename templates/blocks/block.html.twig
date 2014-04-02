@@ -43,8 +43,18 @@
 {{attributes}}
 #}
 
+{#
+js-blabla
 
-<section class="{{ attributes.class |replace( {'block': '' }) }}
+.block
+
+block-system-menu
+  #}
+<section class=" block-{{ machinename }}
+
+{{ attributes.base.class| replace('block-menustuff','') }}
+
+{{ attributes.theme.class}}
 {{ attributes.id}} " role="{{ attributes.role}}">
 
   {{ title_prefix }}

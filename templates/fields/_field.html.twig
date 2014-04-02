@@ -30,13 +30,19 @@
  * @ingroup themeable
  */
 #}
-<div{{ attributes }}>
+
+<div class="{{ attributes.class }}" {{ attributes }}>
   {% if not label_hidden %}
-    <div class="field-label"{{ title_attributes }}>{{ label }}:&nbsp;</div>
+    <div class="field-label"{{ title_attributes }}>{{ label }}</div>
   {% endif %}
-  <div class="field-items"{{ content_attributes }}>
-    {% for delta, item in items %}
-      <div class="field-item {{ cycle(["even", "odd"], delta) }}"{{ item_attributes[delta] }}>{{ item }}</div>
-    {% endfor %}
-  </div>
+  {% for delta, item in items %}
+    {% if loop.length > 1 %}
+    <ul class="field-items" {{ content_attributes }}>
+      <li class="field-item">{{ item }}</li>
+    </ul>
+    {% elseif  %}
+      {# print only the data #}
+      {{ item }}
+    {% endif  %}
+  {% endfor %}
 </div>

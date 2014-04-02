@@ -1,174 +1,43 @@
-{#
-/**
- * - node: Full node entity.
- *   - {{ node.id }}  The node ID
- *   - {{ node.bundle }} : The type of the node, for example, "page" or "article".
- *   - {{ node.authorid }} The user ID of the node author.
- *   - {{ node.createdtime }}: Formatted creation date. Preprocess functions can reformat it by calling format_date() with the desired parameters on $variables['node']->getCreatedTime().
- *   - {{ node.promoted }}  Whether the node is promoted to the front page.
- *   - {{ node.sticky }}: Whether the node is 'sticky'. Sticky nodes are ordered above other non-sticky nodes in teaser
- *
- *   listings
- *   - {{ node.published }}: Whether the node is published.
- *   - {{ node.comment }}: A value representing the comment status of the current node. May
- *     be one of the following:
- *     - 0: The comment form and any existing comments are hidden.
- *     - 1: Comments are closed. No new comments may be posted, but existing
- *       comments are displayed.
- *     - 2: Comments are open on this node.
- *   - {{node.comment_count}}: Number of comments attached to the node.
+theme_hook_original
+<pre>
+{{ dump( theme_hook_original ) }}
+</pre>
 
- * - {{label}}: The title of the node.
- * - {{content}}: All node items. Use {{ content }} to print them all,
- *   or print a subset such as {{ content.field_example }}. Use
- *   {% hide(content.field_example) %} to temporarily suppress the printing
- *   of a given element.
+tags: {{ content.field_tags}}
 
- * - {{user_picture}}: The node author's picture from user-picture.html.twig.
- * - {{date}}: Formatted creation date. Preprocess functions can reformat it by
- *   calling format_date() with the desired parameters on
- *   $variables['created'].
- * - {{name}}: Themed username of node author output from theme_username().
- * - {{node_url}}: Direct URL of the current node.
+<ol>
+    {% for key, value in content  %}
+      <li>{{ key }}</li>
+    {% endfor %}
+</ol>
 
- * - {{display_submitted}}: Whether submission information should be displayed.
- * - {{submitted}}: Submission information created from name and date during
- *   template_preprocess_node().
+<article class="node node--{{ node.id }} view-mode-{{ view_mode }} node--type- {{ attributes.class }}" {{ attributes }}">
 
- * - {{attributes}}: HTML attributes for the containing element.
- *   The attributes.class element may contain one or more of the following
-  *   classes:
- *   - node: The current template type (also known as a "theming hook").
- *   - node-[type]: The current node type. For example, if the node is a
- *     "Article" it would result in "node-article". Note that the machine
- *     name will often be in a short form of the human readable label.
- *   - view-mode-[view_mode]: The View Mode of the node; for example, a teaser
- *     would result in: "view-mode-teaser", and full: "view-mode-full".
- *   - preview: Whether a node is in preview mode.
- *
- *   The following are controlled through the node publishing options.
- *   - promoted: Appears on nodes promoted to the front page.
- *   - sticky: Appears on nodes ordered above other non-sticky nodes in teaser
- *     listings.
- *   - unpublished: Appears on unpublished nodes visible only to site admins.
- * - title_prefix: Additional output populated by modules, intended to be
- *   displayed in front of the main title tag that appears in the template.
- * - title_suffix: Additional output populated by modules, intended to be
- *   displayed after the main title tag that appears in the template.
- * - view_mode: View mode; for example, "teaser" or "full".
- * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
- * - page: Flag for the full page state. Will be true if view_mode is 'full'.
- * - readmore: Flag for more state. Will be true if the teaser content of the
- *   node cannot hold the main body content.
- * - is_front: Flag for front. Will be true when presented on the front page.
- * - logged_in: Flag for authenticated user status. Will be true when the
- *   current user is a logged-in member.
- * - is_admin: Flag for admin user status. Will be true when the current user
- *   is an administrator.
- *
- * @see template_preprocess_node()
- *
- * @ingroup themeable
- */
-#}
-
-{# We hide the comments and links now so that we can render them later. #}
-{% hide(content.comments) %}
-{% hide(content.links) %}
-
-<article {{ attributes }}>
   {{ title_prefix }}
-  {% if not page %} {# only print out if im a teaser #}
+  {% if not page %}
     <h2{{ title_attributes }}>
-      <a href="{{ node_url }}" rel="bookmark">{{ label }}</a>
+      <a href="{{ node.url }}" rel="bookmark">{{ label }}</a>
     </h2>
   {% endif %}
   {{ title_suffix }}
 
-{% if teaser %}
-{# teaser #}
-  <footer>
-    {% trans %}
-      posted by
-    {% endtrans %}
-    <span class="icon icon-user">{{ node.name }}</span>
-
-    <time class="icon icon-time" datetime="{{ node.createdtime|date("Y-m-d H:i") }}">
-      {{ node.createdtime|date("d M Y") }}
-    </time>
-
-    <span class="icon icon-comments">
-      {# simple logic #}
-      {% if node.comment_count > 1 %}
-        No comments
-      {% else %}
-        {{ node.comment_count }} comments
+  {% if content.links %}
+    <footer class="link-wrapper">
+      {{ author }}
+      {% if display_submitted %}
+        <div class="node--submitted">
+          {{ submitted }}
+        </div>
       {% endif %}
 
-    </span>
-
-  </footer>
-
-  <div{{ content_attributes }}>
-    {{ content }}
-  </div>
-  {# no more comments n bs links crap #}
-  <a href="{{node_url}}"> {{ 'Read more'|t }} </a>
-
-{# / teaser #}
-{% else %}
-
-{# page #}
- {% if display_submitted %}
-    <footer>
-      {# user_picture #}
-      {#
-      this user-picture.html.twig where is that ?
-
-        we wanna do a
-        <figure class="frame shade">
-          <img>
-          <figcaption> {{ node.name }}  </figcaption>
-        </figure>
-
-        how do i drill the image user picture down ?
-
-        <h3>node</h3>
-          <pre>{{ dump(node)}}</pre>
-      #}
-
-      {{ name }}
-      {#
-      example wanna add in a icon icon-name class to the names link stuff
-        <a href="user/{{ name.uid }}" class="icon icon-name"> {{ node.name }}</a>
-      #}
-      <time datetime="{{ node.createdtime|date("Y-m-d H:i") }}"> {{ node.createdtime|date("d M Y") }} </time>
-      {{ node.comment_count }} comments  <br>
-      {# tags  - would be sweeter if we could do this drillable #}
-      {{ content.field_tags }}
+      {{ content.links }}
     </footer>
   {% endif %}
 
   <div{{ content_attributes }}>
-    {{ content }}
+    {{ content|without('field_tags','field_image') }}
   </div>
 
-  {{ content.links }}
-  {{ content.comments }}
-{# /page #}
-{% endif %}
-
-
-{#
-<hr>
-view mode: {{ view_mode }} <br>
-is_admin state {{ is_admin }} <br>
-is_front state {{ is_front }} <br>
-
-logged_in state {{ logged_in }} <br>
-promoted state : {{ node.promoted }} <br>
-readmore state: {{ node.readmore }} <br>
-
-#}
+  {{ links }}
 
 </article>

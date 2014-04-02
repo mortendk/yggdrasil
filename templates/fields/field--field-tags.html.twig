@@ -1,0 +1,48 @@
+<section class="terms">
+{% for delta, item in items %}
+  {% set class %}
+   class="{{- cycle(["even", "odd"], delta) }} count-{{ loop.index -}}"
+  {% endset %}
+
+  {# first loop #}
+  {% if loop.first %}
+    {# set tags / tag #}
+    {% if loop.length > 1 %} {{ loop.length }}
+      tags
+      {% else %} {{ loop.length }}
+      tag:
+    {% endif %}
+
+  <a href="{{ url(item['#href']) }}" {{ class }}>  {{ item['#title']}}</a>,
+  {# fist loop done #}
+  {# loop 2  #}
+  {% elseif loop.index == 2 %}
+    <a href="{{ url(item['#href']) }}" {{ class }}> 2 {{ item['#title']}}</a>.
+  {# last  #}
+  {% elseif loop.last %}
+    <a href="{{ url(item['#href']) }}" {{ class }}> 3 {{ item['#title']}}</a>.
+  {# default #}
+  {% else %}
+    <a href="{{ url(item['#href']) }}" class="{{ class }}"> def {{ item['#title']}}</a>,
+  {% endif %}
+
+{% endfor %}
+{# tada go for another round #}
+</section>
+
+
+{# url function explained
+
+    <a href="{{ url(item['#href']) }}" class="{{ class }}">{{ item['#title']}}</a>
+
+    <a href="{{ url(item.href) }}" class="{{ class }}">{{ item.title}}</a>
+#}
+
+
+
+{# inline template
+  {% inline_template 'tags' item %}
+    {{ tags.title }}
+    {{ tags.url }}
+  {% end_inline_template %}
+ / inline template #}
