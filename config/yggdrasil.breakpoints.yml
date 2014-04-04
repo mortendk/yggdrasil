@@ -1,3 +1,6 @@
-mobile: '(min-width: 0px)'
-narrow: 'all and (min-width: 480px) and (max-width: 959px)'
-wide: 'all and (min-width: 960px)'
+# This file sets our breakpoints for the theme
+# doc: https://drupal.org/documentation/modules/breakpoint
+small: 'all and max (max-width: 767px)'
+medium: 'all and (min-width: 0px) and (max-width: 768px)'
+large: 'all and (min-width: 769px) and (max-width: 1024px)'
+xlarge: 'all and (min-width: 1025px)'

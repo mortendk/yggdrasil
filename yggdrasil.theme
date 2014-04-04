@@ -1,42 +1,45 @@
 <?php
+/*
+Preprocess
+ */
+function yggdrasil_preprocess_html(&$variables) { }
 
-/**
- * @file
- * Functions to support theming in the Stark theme.
+function yggdrasil_preprocess_block(&$variables) { }
+
+function yggdrasil_preprocess_node(&$variables) { }
+
+function yggdrasil_preprocess_field(&$variables, $hook) {
+  /*
+  test if the field is multiple or not
+  */
+  if ( isset($element['#items']) ) {
+    if( $element['#items']->getFieldDefinition()->getCardinality() != "1"){
+      $variables['multiple'] = TRUE;
+    }
+  }
+  /*
+  variables for the field classname
+ */
+  $variables['entity_type'] = strtr($element['#entity_type'], '_', '-');
+  $variables['field_name'] = strtr($element['#field_name'], '_', '-');
+  $variables['field_type'] = strtr($element['#field_type'], '_', '-');
+
+
+}
+
+
+/*
+Theme Suggestions
+doc: https://drupal.org/node/2186401
+change record: https://drupal.org/node/2100775
  */
 
-/**
- * Implements hook_preprocess_HOOK() for HTML document templates.
- *
- * Adds body classes if certain regions have content.
+/*
+ * Implements HOOKTHEME_theme_suggestions_HOOK_alter().
  */
-function yggdrasil_preprocess_html(&$variables) {
-  // kpr($variables);
-  // Add information about the number of sidebars.
-  // if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
-  //   $variables['attributes']['class'][] = 'two-sidebars';
-  // }
-  // elseif (!empty($variables['page']['sidebar_first'])) {
-  //   $variables['attributes']['class'][] = 'one-sidebar';
-  //   $variables['attributes']['class'][] = 'sidebar-first';
-  // }
-  // elseif (!empty($variables['page']['sidebar_second'])) {
-  //   $variables['attributes']['class'][] = 'one-sidebar';
-  //   $variables['attributes']['class'][] = 'sidebar-second';
-  // }
-  // else {
-  //   $variables['attributes']['class'][] = 'no-sidebars';
-  // }
+function yggrasil_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'node__' . 'my_first_suggestion';
+  $suggestions[] = 'node__' . 'my_second_suggestion';
 }
 
-function yggdrasil_preprocess_block(&$variables) {
-  //kpr($variables);
-  //theme hook suggestions?
-}
-
-
-function yggdrasil_preprocess_node(&$variables) {
-  // kpr($variables);
-  //theme hook suggestions?
-}
 

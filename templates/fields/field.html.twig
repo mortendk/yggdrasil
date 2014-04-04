@@ -1,0 +1,43 @@
+{% if multiple %}
+  {# --------------------- Multiple fields --------------------- #}
+  {# --- Multiple Field no label --- #}
+  {% if label_hidden %}
+    <div class="field--multiple field__items" {{ content_attributes }}>
+      {% for delta, item in items %}
+        <div class="field__item"{{ item_attributes[delta] }}>{{ item }}</div>
+      {% endfor %}
+      </div>
+    </div>
+
+  {% else %}
+  {# --- Multiple Field with label --- #}
+    <div class="field--multiple">
+      <div class="field__label"{{ title_attributes }}>{{ label }}</div>
+      <div class="field__items"{{ content_attributes }}>
+        {% for delta, item in items %}
+          <div class="field__item"{{ item_attributes[delta] }}>{{ item }}</div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  {# end of multiples  #}
+{% else %}
+  {# --------------------- Single field --------------------- #}
+
+  {# --- Single Field no label --- #}
+  {% for delta, item in items %}
+    {# --- single value no label --- #}
+    {% if label_hidden %}
+       <div class="field--single field__item {{ attributes.class }}"{{ attributes }}{{ content_attributes }}{{ item_attributes[delta] }}>{{ item }}</div>
+    {% else %}
+      {# --- single value with label --- #}
+      <div class="field--single {{ attributes.class }}"{{ attributes }}>
+        <div class="field__label"{{ title_attributes }}>{{ label }}</div>
+        <div class="field__item" {{ content_attributes }} {{ item_attributes[delta] }}>WTF {{ item }}</div>
+      </div>
+    {% endif %}
+    {# end label_hidden#}
+  {% endfor %}
+  {# --- end single value --- #}
+{% endif %}
