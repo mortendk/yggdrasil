@@ -1,0 +1,125 @@
+/*
+Tabs
+==============================
+navigation tabs
+
+    <nav class="tabs">
+  
+      <h2 class="element-invisible">Primary tabs</h2>
+      <ul class="tabs primary">
+        <li><a href="#">tabs can</a></li>
+        <li class="active">
+          <a href="#" class="active">be pretty awesome<span class="element-invisible">(active tab)</span></a>
+        </li>
+        <li><a href="#">and a pita</a></li>
+      </ul>
+
+      <h2 class="element-invisible">Secondary tabs</h2>
+      <ul class="tabs secondary">
+        <li><a href="#">Secondary tabs</a></li>
+        <li><a href="#">is right here</a></li>
+        <li class="active">
+          <a href="#" class="active">baby<span class="element-invisible">(active tab)</span></a>
+        </li>
+      </ul>
+    </nav>
+
+ */
+.tabs.primary{
+  @extend %l-width;
+  @extend %cf;
+  border-bottom: 1px solid rgba($blue, 0.2);
+  margin-bottom:0rem;
+  padding-bottom:0;
+  li{
+    padding:0;
+  }
+  > li{
+    @include breakpoint($medium-up){
+      float:left;
+      margin-right:2rem; 
+      padding:0;
+      position: relative;
+      display: block;
+      margin-bottom: -1px;
+    }//breaktpoint: $medi-upum
+  }
+  a{ 
+    color: $blue;
+    display: block;
+    @include breakpoint($medium-up){
+      padding:1rem 1rem 0.5rem 1rem ;
+      border:1px solid transparent;
+      transition: all 0.5s;      
+      @include border-radius(4px 4px 0 0);
+    }//breaktpoint: $medi-upum      
+  }
+  .active a{
+    @include breakpoint($medium-up){
+      background: rgba(white, 0.7);
+      border: 1px solid rgba($blue, 0.5);
+      @include box-shadow(0 -1px 3px rgba($blue, 0.5));   
+      border-bottom-color: transparent;
+      padding:1rem 2rem 0.5rem 2rem;
+      text-decoration: none; 
+    }//breaktpoint: $medi-upum
+  }
+  li a:hover{
+    @include breakpoint($medium-up){    
+      @include box-shadow(0 -1px 3px rgba($blue, 0.5));   
+      border-color:transparent;
+      border-bottom: none;
+    }
+  }
+  > li:first-child a{
+    @include breakpoint($medium-up){        
+      margin-left: 2rem;
+    }
+  }
+
+}
+
+
+.tabs.secondary{
+  padding: 0 2rem;
+  @extend %l-width;
+  @extend %cf;
+  border-bottom: 1px solid rgba($blue, 0.2);
+  @include background-image(linear-gradient(rgba($blue,0.01), rgba($blue, 0.1) ));  
+
+  > li{
+    float:left;
+    border-right: 1px solid rgba($blue,0.2);
+  }
+  a {
+    display: block;
+    padding:0.5rem 2rem;
+    transition: all 1s;
+    // @include border-radius(3px);
+  }
+  a:hover{ 
+    background: rgba($blue, 0.2);
+    @include box-shadow(0 0px 3px rgba($blue, 0.1));   
+    text-decoration:none;
+    padding:0.5rem 3rem;
+  }
+  .active a{
+    font-weight: bold;
+  }
+}
+
+
+
+/*
+Action links
+--------------------------------
+
+    <ul class="action-links">
+      <li><a href="#">Mothership</a></li>
+      <li><a href="#">Seven</a></li>
+    </ul>
+
+ */
+.action-links{
+  li{  @extend %nav-inline; }
+}

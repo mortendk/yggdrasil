@@ -1,0 +1,63 @@
+/*
+Base
+
+base styles & [smacss: base](https://smacss.com/book/type-base)
+file:_base.scss
+
+Body is set to 62.5 to force the font sizing to be easy to be calculated with 1em = 10px - body margin & padding is resetted
+
+Styleguide 2.0
+*/
+
+
+
+/*
+Reset html & body
+-------------------------------
+*/
+html {
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: #f3f5f6;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/*
+boxsizing
+-------------
+All elements are set to use the border-box, cause were tired of bs.
+*/
+
+*{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+/*
+Rulers
+
+everyday fulers
+
+.style-six    - anther one
+
+Markup:
+<hr class="{$modifiers}">
+
+Styleguide 2.1
+*/
+
+hr{ border-top:1px solid #666; }
+
+hr.style-six {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}

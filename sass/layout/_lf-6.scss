@@ -1,0 +1,82 @@
+/*
+Layout Float 6
+===============================
+
+Layout Float 6
+--------------------------------
+Floats elements breaks them on a count of 6,4,2
+Detects on a <article> or <ul><li>
+small: 2
+medium: 4
+large: 6
+
+
+    <section class="lf-6"> 
+      <article>foo</article>
+      <article>foo</article>      
+      <article>foo</article>      
+      <article>foo</article>      
+      <article>foo</article>
+      <article>foo</article>      
+      <article>foo</article>      
+      <article>foo</article>      
+    <section>
+
+    <section class="lf-6"> 
+      <ul>
+      <li>foo</li>
+      <li>foo</li>      
+      <li>foo</li>      
+      <li>foo</li>      
+      <li>foo</li>
+      <li>foo</li>      
+      <li>foo</li>      
+      <li>foo</li>      
+      </ul>
+    <section>
+
+ */
+%lf-6,
+.lf-6{
+  @extend %cf;
+
+  @include breakpoint($small) { 
+    > div,
+    > article,
+    > ul li{ 
+      @include float-span(6, $grid:12);
+    }
+    > div:nth-of-type(2n),
+    > article:nth-of-type(2n),
+    > ul li:nth-of-type(2n) {      
+      @include float-span(6, last, $grid:12); 
+    } 
+  }
+
+  @include breakpoint($medium) { 
+    > div,
+    > article,
+    > ul li{ 
+      @include float-span(4, $grid:12);
+    }
+    > div:nth-of-type(3n),
+    > article:nth-of-type(3n),
+    > ul li:nth-of-type(3n) {      
+      @include float-span(4, last, $grid:12); 
+    } 
+  }
+
+  @include breakpoint($large) {
+    > div,
+    > article,
+    > ul li{
+      @include float-span(2, $grid:12);
+    }
+    > div:nth-of-type(6n),
+    > article:nth-of-type(6n),
+    > ul li:nth-of-type(6n) { 
+      @include float-span(2, last, $grid:12); 
+    }
+  }
+
+}

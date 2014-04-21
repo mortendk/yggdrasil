@@ -1,8 +1,0 @@
-Fun things to do
-
----------------
-Menu
----------------
-* Add a class around the menu that counts the numbers of links
-* change markup in the different levels
-* change markup on 2 link

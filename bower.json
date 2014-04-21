@@ -1,0 +1,13 @@
+{
+  "name": "yggdrasil",
+  "version": "0.1.0",
+  "dependencies": {
+    "html5shiv": "latest",
+    "normalize.scss": "latest",
+    "fontawesome": "latest",
+    "select2" : "latest",
+    "flexslider" : "latest",
+    "skrollr": "latest",
+    "animate.scss": "latest"
+  }
+}

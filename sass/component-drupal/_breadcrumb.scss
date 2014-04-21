@@ -1,0 +1,48 @@
+/*
+Breadcrumb
+======================
+
+Breadcrumb
+======================
+Drupals breadcrumbs
+
+templates
+---------------------------
+template.php:
+function themename_breadcrumb($variables) {
+  ....
+}
+
+    <div class="breadcrumb">
+      <a href="/">Home</a>  
+      <a href="/design_test">Design test</a>
+      <a href="/design_test/form">Form</a>
+    </div>
+
+    <nav class="breadcrumb" role="navigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/design_test">Design test</a></li>
+        <li><a href="/design_test/form">Form</a></li>
+      </ul>
+    </nav>
+
+*/
+
+.breadcrumb {
+  li{
+    display: inline-block;
+    padding-right:0.5rem;
+  }
+  li:after{
+    content: " / ";
+  }
+  li:last-child:after{
+    content:"";
+  }
+  li a{
+    padding-right:0.2rem
+  }
+  li:first-child a{ 
+  }
+}

@@ -1,17 +1,13 @@
-theme_hook_original
-<pre>
-{{ dump( theme_hook_original ) }}
-</pre>
+{#
+type: {{ node.bundle }} <br>
+promoted ?{{ node.isPromoted }}<br>
+view mode: {{ view_mode }}<br>
+{{ node.isSticky }}
+{{ node.isPublished }}
 
-tags: {{ content.field_tags}}
+#}
+<article class="node node--{{ node.id }} view-mode-{{ view_mode }} node--type-{{ node.bundle }} {{ attributes.class }}" {{ attributes }}>
 
-<ol>
-    {% for key, value in content  %}
-      <li>{{ key }}</li>
-    {% endfor %}
-</ol>
-
-<article class="node node--{{ node.id }} view-mode-{{ view_mode }} node--type- {{ attributes.class }}" {{ attributes }}">
 
   {{ title_prefix }}
   {% if not page %}
@@ -25,7 +21,7 @@ tags: {{ content.field_tags}}
     <footer class="link-wrapper">
       {{ author }}
       {% if display_submitted %}
-        <div class="node--submitted">
+        <div class="node__meta">
           {{ submitted }}
         </div>
       {% endif %}

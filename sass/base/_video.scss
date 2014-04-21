@@ -1,0 +1,19 @@
+/*
+Video
+
+Video killed the radio star
+
+Markup:
+<iframe width="420" height="315" src="http://www.youtube.com/embed/rFaLLnMu7Rs" frameborder="0" allowfullscreen></iframe>
+
+Styleguide 2.3
+*/
+
+video {
+  max-width: 100%;
+  height: auto;
+}
+iframe{
+  max-width: 100%;
+}
+

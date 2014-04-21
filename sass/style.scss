@@ -1,0 +1,83 @@
+/*
+Style.css
+9
+file to gather & collect all of the files
+*/
+
+//whatever
+
+// -- get Partials -------------------------------------------------------------
+@import "compass";
+@import "singularitygs";
+
+@import "config";
+
+//-- mixins & common elements --------------------------------------------------
+@import "mixin";
+@import "lib/normalize";
+// @import "lib/font-awesome/font-awesome";
+// @import "lib/animate";
+// @import "lib/flexslider";
+
+
+@import "design/colors";
+@import "design/typography";
+@import "design/graphicstyles";
+/*
+
+@import "base/base";
+@import "base/list";
+@import "base/navigation";
+@import "base/image";
+@import "base/video";
+
+// -- Design & type elements ---------------------------------------------------
+//layout
+@import "layout/layout";
+@import "layout/helpers";
+@import "layout/layout-base";
+@import "layout/lf-2";
+@import "layout/lf-3";
+@import "layout/lf-4";
+@import "layout/lf-5";
+@import "layout/lf-6";
+
+
+//design elements
+@import "design/graphicstyles";
+@import "design/icons";
+@import "design/design";
+
+// -- sprites ------------------------------------------------------------------
+// this is uncommented until all design elements is defined ;)
+//@import "compass/utilities/sprites";
+//http://compass-style.org/help/tutorials/spriting/
+//@import "icon/*.png";
+//@include all-icon-sprites;
+
+// -- components ---------------------------------------------------------------
+@import "component/buttons";
+@import "component/menu-mobile";
+// @import "component/menu-dropdown-skin";
+
+// -- Drupal stuff ---------------------------------------------------
+@import "component-drupal/breadcrumb";
+@import "component-drupal/message";
+
+
+@import "component-drupal/form";
+//@import "component-drupal/form-vertical-tabs";
+// @import "component-drupal/form-login";
+@import "component-drupal/search";
+// @import "component-drupal/displaysuite";
+
+@import "component-drupal/pager";
+@import "component-drupal/tabs";
+@import "component-drupal/table";
+@import "component-drupal/views";
+
+// -- beware of the dragons ----------------------------------------------------
+
+
+@import "dragons";
+*/

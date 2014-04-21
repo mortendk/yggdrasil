@@ -1,0 +1,133 @@
+/*
+colors
+ */
+$black: #000;
+
+$gray-darker:  lighten($black, 13.5%); // #222
+$gray-dark:    lighten($black, 20%);   // #333
+$gray:         lighten($black, 33.5%); // #555
+$gray-light:   lighten($black, 60%);   // #999
+$gray-lighter: lighten($black, 93.5%); // #eee
+
+$white: #fff;
+
+$green-light:#00b966;
+$green: green;
+$green-dark: #00a054;
+
+$lime: #9bc035;
+$lime-dark: #84a824;
+
+$yellow: #f7b82b;
+$yellow-dark: #dd9d19;
+
+$orange: #f2883a;
+$orange-dark: #d97128;
+
+$red: #e3573e;
+$red-dark: #ca442b;
+
+$wine: #c24f78;
+$wine-dark: #a84065;
+
+$purple: #8966cc;
+$purple-dark: #7654b5;
+
+$blue: #1497cb;
+$blue-dark: #0080ad;
+$blue-gray: #375066;
+
+$test: pink;
+
+/*
+Color scheme
+
+Colors as defined in /design/_colors.scss
+
+.dark - dark background
+.light - whitebackground
+.gray - gray background
+
+Markup:
+<section class="test__colorbg {$modifiers}">
+<div class="test__color black">black</div>
+<div class="test__color white">White</div>
+<div class="test__color gray-lighter">Gray lighter</div>
+<div class="test__color gray-light">gray light</div>
+<div class="test__color gray">Gray</div>
+<div class="test__color gray-dark">gray dark</div>
+<div class="test__color gray-darker">gray darker</div>
+<div class="test__color green-light">Green light</div>
+<div class="test__color green">Green</div>
+<div class="test__color green-dark">green dark</div>
+<div class="test__color lime">Lime</div>
+<div class="test__color lime-dark">Lime dark</div>
+<div class="test__color yellow">yellow</div>
+<div class="test__color yellow-dark">yellow dark</div>
+<div class="test__color orange">orange</div>
+<div class="test__color orange-dark">orange dark</div>
+<div class="test__color red">red</div>
+<div class="test__color red-dark">red dark</div>
+<div class="test__color wine">wine</div>
+<div class="test__color wine-dark">wine dark</div>
+<div class="test__color purple">purple</div>
+<div class="test__color purple-dark">purple dark</div>
+<div class="test__color blue">blue</div>
+<div class="test__color blue-dark">blue dark</div>
+<section>
+
+Styleguide 2.0
+*/
+
+.test__color{
+  @include border-radius(100px);
+  display:inline-block;
+  color:$black;
+  font-size:1rem;
+  font-weight: bold;
+  line-height: 10rem;
+  width:10rem;
+  height:10rem;
+  text-align:center;
+  border:3px solid #ddd;
+  margin: 1rem;
+}
+
+.test__color.white{ background: $white}
+.test__color.black{ background: $black}
+.test__color.gray-darker{ background: $gray-darker}
+.test__color.gray-dark{ background: $gray-dark}
+.test__color.gray{ background: $gray}
+.test__color.gray-light{ background: $gray-light}
+.test__color.gray-lighter{ background: $gray-lighter}
+
+.test__color.green-light{ background: $green-light }
+.test__color.green{ background: $green }
+.test__color.green-dark{ background: $green-dark}
+
+.test__color.lime { background: $lime}
+.test__color.lime-dark { background: $lime-dark}
+
+.test__color.yellow { background: $yellow}
+.test__color.yellow-dark { background: $yellow-dark}
+
+.test__color.orange { background: $orange}
+.test__color.orange-dark { background: $orange-dark}
+
+.test__color.red { background: $red}
+.test__color.red-dark { background: $red-dark}
+
+.test__color.wine { background: $wine }
+.test__color.wine-dark { background: $wine-dark}
+
+.test__color.purple { background: $purple}
+.test__color.purple-dark { background: $purple-dark}
+
+.test__color.blue { background: $blue}
+.test__color.blue-dark { background: $blue-gray}
+.test__color.blue-gray { background:  $blue-gray}
+
+
+.test__colorbg.dark{ background: $gray-darker}
+.test__colorbg.gray{ background: $gray}
+.test__colorbg.light{ background: $gray-lighter}

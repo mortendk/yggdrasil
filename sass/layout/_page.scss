@@ -1,0 +1,33 @@
+/*
+Layout
+=========
+the basic design of the page
+The grids settings are created in _config.scsss
+*/
+
+
+.l-container{
+
+
+}
+
+.messages{
+  @extend %l-width;
+  @extend %cf;
+}
+
+header[role="banner"]{
+  @extend .l-width;
+  @extend %cf;
+}
+
+
+main{
+  margin:0 auto;
+  min-height: 50rem
+}
+
+
+footer[role="contentinfo"]{
+
+}

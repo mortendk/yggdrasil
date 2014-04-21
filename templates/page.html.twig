@@ -1,0 +1,43 @@
+<div class="l-container">
+
+  <header role="banner">
+    {{ page.header }}
+  </header>
+
+  <main role="main">
+    <a id="main-content"></a>{# link is in html.html.twig #}
+
+    <div class="l-content">
+      {# blocks #}
+
+        {% block headerblock %}
+          Hi im a TWIGblock
+          you can change me and not the rest of the page
+        {% endblock %}
+
+      {# / blocks #}
+
+      {{ title_prefix }}
+      {% if title %}
+        <h1>{{ title }}</h1>
+      {% endif %}
+      {{ title_suffix }}
+
+      {{ page.content }}
+
+      {{ tabs }}
+
+      {% if action_links %}
+        <nav class="action-links">{{ action_links }}</nav>
+      {% endif %}
+
+    </div>{# /.l-content #}
+  </main>
+
+  {% if page.footer %}
+    <footer role="contentinfo">
+      {{ page.footer }}
+    </footer>
+  {% endif %}
+
+</div>{# /.l-container #}

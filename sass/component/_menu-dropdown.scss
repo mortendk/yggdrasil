@@ -1,0 +1,89 @@
+/*
+
+# Dropdown menu
+--------------------------------------------------------------------------------
+file: baseline/sass/component/_menu-dropdown.scss
+file parent: /themename/sass/component/_gallery-slider-skin.scss
+--------------------------------------
+
+Creates a basic dropdown menu build in pure clean css
+yes its awesome
+
+--------------------------------------
+Markup:
+<nav class="menu-dropdown">
+  <ul>
+    <li><a href="#">foo</a></li>
+    <li><a href="#">bar</a></li>
+    <li><a href="#">baz</a></li>
+  </ul>
+ </nav>
+
+--------------------------------------
+example:
+Add the class : .menu-dropdown to the wrapper of an ul > li
+
+--------------------------------------
+Drupal templates:
+/templates/panes/panels-pane--system-main-menu.tpl.php
+
+@todo: breakpoints
+ */
+
+
+// -- Dropdown structure -----------------------------------------
+@media screen and (min-width: 601px) {
+  .menu-dropdown{ @include zen-clear(left); }
+
+  .menu-dropdown a{ display:block;}
+  .menu-dropdown ul{ display:block;  margin:0; padding:0; }
+  .menu-dropdown li{ list-style: none; }
+  // lvl 1
+  .menu-dropdown > ul > li{ position:relative; display:inline;}
+  // lvl 2
+  .menu-dropdown ul > li > ul{  position:absolute; z-index:999; display:none;}
+  .menu-dropdown ul li:hover > ul{ display:block;}
+  .menu-dropdown ul ul li{ float:none; margin:0; padding:0; }
+  .menu-dropdown ul ul a{ white-space:nowrap; }
+  // lvl 3
+  .menu-dropdown ul ul li ul { position: absolute; top:auto; display: none;}
+  .menu-dropdown ul ul li:hover ul { display: block; }
+}
+
+
+// -- Dropdown Skin skeleton------------------------------------------------------------------
+@media screen and (max-width: 600px) {
+  .menu-dropdown{  }
+  .menu-dropdown > ul >  li { }
+  .menu-dropdown > ul > li {  }
+  .menu-dropdown > ul > li > a {  }
+  .menu-dropdown > ul > li li {  }
+
+  // hide level 2+
+  .menu-dropdown > ul{
+    // display: none;
+  }
+  .menu-dropdown ul ul {
+    // display:none;
+  }
+  .menu-dropdown > ul > li .active-trail{ }
+} //max-width:600
+
+@media screen and (min-width: 601px) {
+  .menu-dropdown{
+    // lvl 1 ------------------------------
+    & > ul > li > a{ }
+
+    // lvl 2  ------------------------------
+    ul ul { }
+    ul ul > li{ }
+
+    ul ul li a{ }
+    ul ul li a:hover{}
+
+    // lvl 3  ------------------------------
+    ul ul li:hover ul{ }
+    ul ul li ul a { }
+
+  } //.menu-dropdown done;
+} // min-width:601

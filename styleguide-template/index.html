@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Yggdrasil Styleguide</title>
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node" />
+  <meta name="viewport" content="width=device-width">
+  <!-- <link rel="stylesheet" href="public/kss.css"> -->
+  <link rel="stylesheet" href="public/font-awesome.css">
+  <link rel="stylesheet" href="../styleguide-template/public/styleguide.css">
+  <!-- <link rel="stylesheet" href="public/style.css"> -->
+</head>
+<body class="styleguide-global">
+  <!-- navigation   -->
+  <header role="bannerinfo" class="layout-sg-header">
+    <nav class="styleguide__menu">
+    <a href="index.html">Styleguide</a>
+    {{#eachRoot}}
+      <a href="section-{{reference}}.html">{{header}}</a>
+    {{/eachRoot}}
+    </nav>
+  </header>
+
+  <!-- /navigation -->
+
+  <main role="main" class="layout-sg-main">
+
+    <aside class="layout-sg-sidebar">
+      <!-- nav sub -->
+      <nav class="styleguide__submenu">
+        {{#if overview}}
+        {{else}}
+        <ul>
+          {{#eachSection rootNumber}}
+          {{#whenDepth 1}}
+          {{else}}
+          <li>
+            <a href="#section-{{reference}}" title="{{reference}} {{header}}">{{header}}</a>
+          </li>
+          {{/whenDepth}}
+          {{/eachSection}}
+        </ul>
+        {{/if}}
+      </nav>
+      <!-- nav sub -->
+    </aside>
+
+    <div class="layout-sg-content">
+
+      {{#if overview}}
+        <article class="styleguide__overview" id="section-0">
+        <p>{{html overview}}</p>
+        </article>
+      {{else}}
+
+        {{#eachSection rootNumber}}
+          {{#whenDepth 1}}
+          <div class="styleguide-section styleguide--depth-{{refDepth}}">
+            <h1 class="styleguide-section__title">{{ header }}</h1>
+            <span class="styleguide__ref">{{ reference }}</span>
+          </div>
+          {{else}}
+          <section class="styleguide styleguide--depth-{{refDepth}}" id="section-{{reference}}">
+            <h2 class="styleguide__title"><i class="fa fa-twitter"></i>{{ header }}</h2>
+            <span class="styleguide__ref">{{ reference }}</span>
+          {{/whenDepth}}
+
+            {{#ifAny markup modifiers}}
+              <div class="styleguide__description">
+                <i class="fa fa-info-circle"></i>
+                {{html description}}
+              </div>
+              <div class="styleguide__modifier styleguide__modifier--default">
+                <i class="fa fa-css3"></i>
+                <span class="styleguide__modifier-title">Default</span>
+              </div>
+
+              <div class="styleguide__example styleguide__example--default">
+                {{modifierMarkup}}
+              </div>
+
+              {{#eachModifier}}
+
+                <div class="styleguide__modifier">
+                  <i class="fa fa-css3"></i>
+                  <span class="styleguide__modifier-title">{{name}}</span>
+                  {{html description}}
+                </div>
+
+                <div class="styleguide__example">
+                  {{modifierMarkup}}
+                </div>
+
+                <div class="styleguide-modifier__name">
+                  {{name}}
+                </div>
+
+              {{/eachModifier}}
+                <div class="styleguide__markup">
+                  <i class="fa fa-html5"></i>
+                  <pre><code>{{markup}}</code></pre>
+                </div>
+            {{else}}
+                {{#if description}}
+                  {{html description}}
+                {{/if}}
+            {{/ifAny}}
+          {{#whenDepth 1}} {{else}}
+            </section>
+          {{/whenDepth}}
+
+        {{/eachSection}}
+      {{/if}}
+    </div>
+
+  </main>
+
+  <footer class="layout-sg-footer">
+    <div class="layout-sg-footer__content">
+      Created using <a href="https://github.com/hughsk/kss-node">kss-node</a> and
+    </div>
+
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="public/kss.js"></script>
+<!--  <script src="public/prettify.js"></script> -->
+  <script src="public/jquery.min.js"></script>
+  <!-- code colorscheme -->
+  <link rel="stylesheet" href="public/highlight/styles/monokai_sublime.css">
+  <script src="public/highlight/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+
+      //-------------------------
+      //scroll to same # on a page
+      //--------------------------
+      $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+
+
+
+  </script>
+</body>
+</html>

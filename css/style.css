@@ -1,0 +1,1038 @@
+/*
+Style.css
+9
+file to gather & collect all of the files
+*/
+@import url(http://fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900);
+/*
+config
+================================
+This file contains all the variables that can be used
+* Gridsystem is defined in layout/layout.scss
+* colors : design/colors.scss
+* fonts : typograghy.scss
+*/
+/* line 117, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_background-grid.scss */
+[data-development-grid="show"] {
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 128, 128, 0.5)), color-stop(6.77966%, rgba(0, 128, 128, 0.5)), color-stop(6.77966%, rgba(0, 128, 128, 0.25)), color-stop(8.47458%, rgba(0, 128, 128, 0.25)), color-stop(8.47458%, rgba(0, 128, 128, 0.5)), color-stop(15.25424%, rgba(0, 128, 128, 0.5)), color-stop(15.25424%, rgba(0, 128, 128, 0.25)), color-stop(16.94915%, rgba(0, 128, 128, 0.25)), color-stop(16.94915%, rgba(0, 128, 128, 0.5)), color-stop(23.72881%, rgba(0, 128, 128, 0.5)), color-stop(23.72881%, rgba(0, 128, 128, 0.25)), color-stop(25.42373%, rgba(0, 128, 128, 0.25)), color-stop(25.42373%, rgba(0, 128, 128, 0.5)), color-stop(32.20339%, rgba(0, 128, 128, 0.5)), color-stop(32.20339%, rgba(0, 128, 128, 0.25)), color-stop(33.89831%, rgba(0, 128, 128, 0.25)), color-stop(33.89831%, rgba(0, 128, 128, 0.5)), color-stop(40.67797%, rgba(0, 128, 128, 0.5)), color-stop(40.67797%, rgba(0, 128, 128, 0.25)), color-stop(42.37288%, rgba(0, 128, 128, 0.25)), color-stop(42.37288%, rgba(0, 128, 128, 0.5)), color-stop(49.15254%, rgba(0, 128, 128, 0.5)), color-stop(49.15254%, rgba(0, 128, 128, 0.25)), color-stop(50.84746%, rgba(0, 128, 128, 0.25)), color-stop(50.84746%, rgba(0, 128, 128, 0.5)), color-stop(57.62712%, rgba(0, 128, 128, 0.5)), color-stop(57.62712%, rgba(0, 128, 128, 0.25)), color-stop(59.32203%, rgba(0, 128, 128, 0.25)), color-stop(59.32203%, rgba(0, 128, 128, 0.5)), color-stop(66.10169%, rgba(0, 128, 128, 0.5)), color-stop(66.10169%, rgba(0, 128, 128, 0.25)), color-stop(67.79661%, rgba(0, 128, 128, 0.25)), color-stop(67.79661%, rgba(0, 128, 128, 0.5)), color-stop(74.57627%, rgba(0, 128, 128, 0.5)), color-stop(74.57627%, rgba(0, 128, 128, 0.25)), color-stop(76.27119%, rgba(0, 128, 128, 0.25)), color-stop(76.27119%, rgba(0, 128, 128, 0.5)), color-stop(83.05085%, rgba(0, 128, 128, 0.5)), color-stop(83.05085%, rgba(0, 128, 128, 0.25)), color-stop(84.74576%, rgba(0, 128, 128, 0.25)), color-stop(84.74576%, rgba(0, 128, 128, 0.5)), color-stop(91.52542%, rgba(0, 128, 128, 0.5)), color-stop(91.52542%, rgba(0, 128, 128, 0.25)), color-stop(93.22034%, rgba(0, 128, 128, 0.25)), color-stop(93.22034%, rgba(0, 128, 128, 0.5)), color-stop(100%, rgba(0, 128, 128, 0.5)));
+  background-image: -webkit-linear-gradient(left, rgba(0, 128, 128, 0.5), rgba(0, 128, 128, 0.5) 6.77966%, rgba(0, 128, 128, 0.25) 6.77966%, rgba(0, 128, 128, 0.25) 8.47458%, rgba(0, 128, 128, 0.5) 8.47458%, rgba(0, 128, 128, 0.5) 15.25424%, rgba(0, 128, 128, 0.25) 15.25424%, rgba(0, 128, 128, 0.25) 16.94915%, rgba(0, 128, 128, 0.5) 16.94915%, rgba(0, 128, 128, 0.5) 23.72881%, rgba(0, 128, 128, 0.25) 23.72881%, rgba(0, 128, 128, 0.25) 25.42373%, rgba(0, 128, 128, 0.5) 25.42373%, rgba(0, 128, 128, 0.5) 32.20339%, rgba(0, 128, 128, 0.25) 32.20339%, rgba(0, 128, 128, 0.25) 33.89831%, rgba(0, 128, 128, 0.5) 33.89831%, rgba(0, 128, 128, 0.5) 40.67797%, rgba(0, 128, 128, 0.25) 40.67797%, rgba(0, 128, 128, 0.25) 42.37288%, rgba(0, 128, 128, 0.5) 42.37288%, rgba(0, 128, 128, 0.5) 49.15254%, rgba(0, 128, 128, 0.25) 49.15254%, rgba(0, 128, 128, 0.25) 50.84746%, rgba(0, 128, 128, 0.5) 50.84746%, rgba(0, 128, 128, 0.5) 57.62712%, rgba(0, 128, 128, 0.25) 57.62712%, rgba(0, 128, 128, 0.25) 59.32203%, rgba(0, 128, 128, 0.5) 59.32203%, rgba(0, 128, 128, 0.5) 66.10169%, rgba(0, 128, 128, 0.25) 66.10169%, rgba(0, 128, 128, 0.25) 67.79661%, rgba(0, 128, 128, 0.5) 67.79661%, rgba(0, 128, 128, 0.5) 74.57627%, rgba(0, 128, 128, 0.25) 74.57627%, rgba(0, 128, 128, 0.25) 76.27119%, rgba(0, 128, 128, 0.5) 76.27119%, rgba(0, 128, 128, 0.5) 83.05085%, rgba(0, 128, 128, 0.25) 83.05085%, rgba(0, 128, 128, 0.25) 84.74576%, rgba(0, 128, 128, 0.5) 84.74576%, rgba(0, 128, 128, 0.5) 91.52542%, rgba(0, 128, 128, 0.25) 91.52542%, rgba(0, 128, 128, 0.25) 93.22034%, rgba(0, 128, 128, 0.5) 93.22034%, rgba(0, 128, 128, 0.5) 100%);
+  background-image: -moz-linear-gradient(left, rgba(0, 128, 128, 0.5), rgba(0, 128, 128, 0.5) 6.77966%, rgba(0, 128, 128, 0.25) 6.77966%, rgba(0, 128, 128, 0.25) 8.47458%, rgba(0, 128, 128, 0.5) 8.47458%, rgba(0, 128, 128, 0.5) 15.25424%, rgba(0, 128, 128, 0.25) 15.25424%, rgba(0, 128, 128, 0.25) 16.94915%, rgba(0, 128, 128, 0.5) 16.94915%, rgba(0, 128, 128, 0.5) 23.72881%, rgba(0, 128, 128, 0.25) 23.72881%, rgba(0, 128, 128, 0.25) 25.42373%, rgba(0, 128, 128, 0.5) 25.42373%, rgba(0, 128, 128, 0.5) 32.20339%, rgba(0, 128, 128, 0.25) 32.20339%, rgba(0, 128, 128, 0.25) 33.89831%, rgba(0, 128, 128, 0.5) 33.89831%, rgba(0, 128, 128, 0.5) 40.67797%, rgba(0, 128, 128, 0.25) 40.67797%, rgba(0, 128, 128, 0.25) 42.37288%, rgba(0, 128, 128, 0.5) 42.37288%, rgba(0, 128, 128, 0.5) 49.15254%, rgba(0, 128, 128, 0.25) 49.15254%, rgba(0, 128, 128, 0.25) 50.84746%, rgba(0, 128, 128, 0.5) 50.84746%, rgba(0, 128, 128, 0.5) 57.62712%, rgba(0, 128, 128, 0.25) 57.62712%, rgba(0, 128, 128, 0.25) 59.32203%, rgba(0, 128, 128, 0.5) 59.32203%, rgba(0, 128, 128, 0.5) 66.10169%, rgba(0, 128, 128, 0.25) 66.10169%, rgba(0, 128, 128, 0.25) 67.79661%, rgba(0, 128, 128, 0.5) 67.79661%, rgba(0, 128, 128, 0.5) 74.57627%, rgba(0, 128, 128, 0.25) 74.57627%, rgba(0, 128, 128, 0.25) 76.27119%, rgba(0, 128, 128, 0.5) 76.27119%, rgba(0, 128, 128, 0.5) 83.05085%, rgba(0, 128, 128, 0.25) 83.05085%, rgba(0, 128, 128, 0.25) 84.74576%, rgba(0, 128, 128, 0.5) 84.74576%, rgba(0, 128, 128, 0.5) 91.52542%, rgba(0, 128, 128, 0.25) 91.52542%, rgba(0, 128, 128, 0.25) 93.22034%, rgba(0, 128, 128, 0.5) 93.22034%, rgba(0, 128, 128, 0.5) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 128, 128, 0.5), rgba(0, 128, 128, 0.5) 6.77966%, rgba(0, 128, 128, 0.25) 6.77966%, rgba(0, 128, 128, 0.25) 8.47458%, rgba(0, 128, 128, 0.5) 8.47458%, rgba(0, 128, 128, 0.5) 15.25424%, rgba(0, 128, 128, 0.25) 15.25424%, rgba(0, 128, 128, 0.25) 16.94915%, rgba(0, 128, 128, 0.5) 16.94915%, rgba(0, 128, 128, 0.5) 23.72881%, rgba(0, 128, 128, 0.25) 23.72881%, rgba(0, 128, 128, 0.25) 25.42373%, rgba(0, 128, 128, 0.5) 25.42373%, rgba(0, 128, 128, 0.5) 32.20339%, rgba(0, 128, 128, 0.25) 32.20339%, rgba(0, 128, 128, 0.25) 33.89831%, rgba(0, 128, 128, 0.5) 33.89831%, rgba(0, 128, 128, 0.5) 40.67797%, rgba(0, 128, 128, 0.25) 40.67797%, rgba(0, 128, 128, 0.25) 42.37288%, rgba(0, 128, 128, 0.5) 42.37288%, rgba(0, 128, 128, 0.5) 49.15254%, rgba(0, 128, 128, 0.25) 49.15254%, rgba(0, 128, 128, 0.25) 50.84746%, rgba(0, 128, 128, 0.5) 50.84746%, rgba(0, 128, 128, 0.5) 57.62712%, rgba(0, 128, 128, 0.25) 57.62712%, rgba(0, 128, 128, 0.25) 59.32203%, rgba(0, 128, 128, 0.5) 59.32203%, rgba(0, 128, 128, 0.5) 66.10169%, rgba(0, 128, 128, 0.25) 66.10169%, rgba(0, 128, 128, 0.25) 67.79661%, rgba(0, 128, 128, 0.5) 67.79661%, rgba(0, 128, 128, 0.5) 74.57627%, rgba(0, 128, 128, 0.25) 74.57627%, rgba(0, 128, 128, 0.25) 76.27119%, rgba(0, 128, 128, 0.5) 76.27119%, rgba(0, 128, 128, 0.5) 83.05085%, rgba(0, 128, 128, 0.25) 83.05085%, rgba(0, 128, 128, 0.25) 84.74576%, rgba(0, 128, 128, 0.5) 84.74576%, rgba(0, 128, 128, 0.5) 91.52542%, rgba(0, 128, 128, 0.25) 91.52542%, rgba(0, 128, 128, 0.25) 93.22034%, rgba(0, 128, 128, 0.5) 93.22034%, rgba(0, 128, 128, 0.5) 100%);
+  background-image: linear-gradient(left, rgba(0, 128, 128, 0.5), rgba(0, 128, 128, 0.5) 6.77966%, rgba(0, 128, 128, 0.25) 6.77966%, rgba(0, 128, 128, 0.25) 8.47458%, rgba(0, 128, 128, 0.5) 8.47458%, rgba(0, 128, 128, 0.5) 15.25424%, rgba(0, 128, 128, 0.25) 15.25424%, rgba(0, 128, 128, 0.25) 16.94915%, rgba(0, 128, 128, 0.5) 16.94915%, rgba(0, 128, 128, 0.5) 23.72881%, rgba(0, 128, 128, 0.25) 23.72881%, rgba(0, 128, 128, 0.25) 25.42373%, rgba(0, 128, 128, 0.5) 25.42373%, rgba(0, 128, 128, 0.5) 32.20339%, rgba(0, 128, 128, 0.25) 32.20339%, rgba(0, 128, 128, 0.25) 33.89831%, rgba(0, 128, 128, 0.5) 33.89831%, rgba(0, 128, 128, 0.5) 40.67797%, rgba(0, 128, 128, 0.25) 40.67797%, rgba(0, 128, 128, 0.25) 42.37288%, rgba(0, 128, 128, 0.5) 42.37288%, rgba(0, 128, 128, 0.5) 49.15254%, rgba(0, 128, 128, 0.25) 49.15254%, rgba(0, 128, 128, 0.25) 50.84746%, rgba(0, 128, 128, 0.5) 50.84746%, rgba(0, 128, 128, 0.5) 57.62712%, rgba(0, 128, 128, 0.25) 57.62712%, rgba(0, 128, 128, 0.25) 59.32203%, rgba(0, 128, 128, 0.5) 59.32203%, rgba(0, 128, 128, 0.5) 66.10169%, rgba(0, 128, 128, 0.25) 66.10169%, rgba(0, 128, 128, 0.25) 67.79661%, rgba(0, 128, 128, 0.5) 67.79661%, rgba(0, 128, 128, 0.5) 74.57627%, rgba(0, 128, 128, 0.25) 74.57627%, rgba(0, 128, 128, 0.25) 76.27119%, rgba(0, 128, 128, 0.5) 76.27119%, rgba(0, 128, 128, 0.5) 83.05085%, rgba(0, 128, 128, 0.25) 83.05085%, rgba(0, 128, 128, 0.25) 84.74576%, rgba(0, 128, 128, 0.5) 84.74576%, rgba(0, 128, 128, 0.5) 91.52542%, rgba(0, 128, 128, 0.25) 91.52542%, rgba(0, 128, 128, 0.25) 93.22034%, rgba(0, 128, 128, 0.5) 93.22034%, rgba(0, 128, 128, 0.5) 100%);
+}
+
+/*
+Mixins
+
+Styleguide 5
+*/
+/*
+mixin: linkcolor
+
+a mixin for easy link coloring
+
+$link - main links color
+$hover - hover color
+$decorationhover - hover decoration default underline
+$visited: - visited color
+$focus  - hover color default same as link
+$decoration - textdecoration
+<pre><code>
+@mixin linkcolor($link, $hover:$link, $decorationhover:underline, $visited: $link, $focus : $hover,$decoration: none){
+  a{color:$link; text-decoration:$decoration; }
+  a:link   { color:$link;}
+  a:visited{ color:$visited;}
+  a:focus  { color:$focus;}
+  a:hover  { color:$hover; text-decoration:$decorationhover;}
+}
+</code></pre>
+
+Styleguide 5.1
+*/
+/*
+REM fix
+--------------
+
+A fix so we can use rem & support ie8 & its retarded friends
+$size is the em value
+@include remfix('width', 1.5);
+
+*/
+/*
+fontsize
+-----------------------
+@mixin fontsize($size:1.6, $line: $size * 1.5){
+  font-size:   ($size * 10) + px;
+  font-size:   $size + rem;
+  line-height: ($line * 10) + px;
+  line-height: $line + rem;
+}
+
+ */
+/*
+Arrow
+------------------------------------
+adds an arrow to a field
+ */
+/*
+Circle
+-------------------------------------------
+makes stuff round ...
+ */
+/*
+Helptool
+-----------------------
+    <a href="http://twitter.com/bimse" class="test circle" data-tooltip="goto twitter">
+      <i class="fa fa-twitter"></i><span>twitter!</span>
+    </a>
+ */
+/*
+normalize
+===============
+
+ */
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+/* line 28, ../sass/lib/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+/* line 38, ../sass/lib/_normalize.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 47, ../sass/lib/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+/* line 58, ../sass/lib/_normalize.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 72, ../sass/lib/_normalize.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+/* line 82, ../sass/lib/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 94, ../sass/lib/_normalize.scss */
+a {
+  background: transparent;
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+/* line 102, ../sass/lib/_normalize.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 111, ../sass/lib/_normalize.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 124, ../sass/lib/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+/* line 133, ../sass/lib/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 142, ../sass/lib/_normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+/* line 150, ../sass/lib/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 158, ../sass/lib/_normalize.scss */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 168, ../sass/lib/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+/* line 180, ../sass/lib/_normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+/* line 189, ../sass/lib/_normalize.scss */
+pre {
+  white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+/* line 197, ../sass/lib/_normalize.scss */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 205, ../sass/lib/_normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 214, ../sass/lib/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 221, ../sass/lib/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 225, ../sass/lib/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+/* line 237, ../sass/lib/_normalize.scss */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+/* line 245, ../sass/lib/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+/* line 257, ../sass/lib/_normalize.scss */
+figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 269, ../sass/lib/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 280, ../sass/lib/_normalize.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 294, ../sass/lib/_normalize.scss */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 306, ../sass/lib/_normalize.scss */
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+/* line 318, ../sass/lib/_normalize.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 333, ../sass/lib/_normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 343, ../sass/lib/_normalize.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 353, ../sass/lib/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 364, ../sass/lib/_normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+/* line 377, ../sass/lib/_normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 386, ../sass/lib/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+/* line 396, ../sass/lib/_normalize.scss */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 409, ../sass/lib/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+colors
+ */
+/*
+Color scheme
+
+Colors as defined in /design/_colors.scss
+
+.dark - dark background
+.light - whitebackground
+.gray - gray background
+
+Markup:
+<section class="test__colorbg {$modifiers}">
+<div class="test__color black">black</div>
+<div class="test__color white">White</div>
+<div class="test__color gray-lighter">Gray lighter</div>
+<div class="test__color gray-light">gray light</div>
+<div class="test__color gray">Gray</div>
+<div class="test__color gray-dark">gray dark</div>
+<div class="test__color gray-darker">gray darker</div>
+<div class="test__color green-light">Green light</div>
+<div class="test__color green">Green</div>
+<div class="test__color green-dark">green dark</div>
+<div class="test__color lime">Lime</div>
+<div class="test__color lime-dark">Lime dark</div>
+<div class="test__color yellow">yellow</div>
+<div class="test__color yellow-dark">yellow dark</div>
+<div class="test__color orange">orange</div>
+<div class="test__color orange-dark">orange dark</div>
+<div class="test__color red">red</div>
+<div class="test__color red-dark">red dark</div>
+<div class="test__color wine">wine</div>
+<div class="test__color wine-dark">wine dark</div>
+<div class="test__color purple">purple</div>
+<div class="test__color purple-dark">purple dark</div>
+<div class="test__color blue">blue</div>
+<div class="test__color blue-dark">blue dark</div>
+<section>
+
+Styleguide 2.0
+*/
+/* line 82, ../sass/design/_colors.scss */
+.test__color {
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  border-radius: 100px;
+  display: inline-block;
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 10rem;
+  width: 10rem;
+  height: 10rem;
+  text-align: center;
+  border: 3px solid #ddd;
+  margin: 1rem;
+}
+
+/* line 96, ../sass/design/_colors.scss */
+.test__color.white {
+  background: white;
+}
+
+/* line 97, ../sass/design/_colors.scss */
+.test__color.black {
+  background: black;
+}
+
+/* line 98, ../sass/design/_colors.scss */
+.test__color.gray-darker {
+  background: #222222;
+}
+
+/* line 99, ../sass/design/_colors.scss */
+.test__color.gray-dark {
+  background: #333333;
+}
+
+/* line 100, ../sass/design/_colors.scss */
+.test__color.gray {
+  background: #555555;
+}
+
+/* line 101, ../sass/design/_colors.scss */
+.test__color.gray-light {
+  background: #999999;
+}
+
+/* line 102, ../sass/design/_colors.scss */
+.test__color.gray-lighter {
+  background: #eeeeee;
+}
+
+/* line 104, ../sass/design/_colors.scss */
+.test__color.green-light {
+  background: #00b966;
+}
+
+/* line 105, ../sass/design/_colors.scss */
+.test__color.green {
+  background: green;
+}
+
+/* line 106, ../sass/design/_colors.scss */
+.test__color.green-dark {
+  background: #00a054;
+}
+
+/* line 108, ../sass/design/_colors.scss */
+.test__color.lime {
+  background: #9bc035;
+}
+
+/* line 109, ../sass/design/_colors.scss */
+.test__color.lime-dark {
+  background: #84a824;
+}
+
+/* line 111, ../sass/design/_colors.scss */
+.test__color.yellow {
+  background: #f7b82b;
+}
+
+/* line 112, ../sass/design/_colors.scss */
+.test__color.yellow-dark {
+  background: #dd9d19;
+}
+
+/* line 114, ../sass/design/_colors.scss */
+.test__color.orange {
+  background: #f2883a;
+}
+
+/* line 115, ../sass/design/_colors.scss */
+.test__color.orange-dark {
+  background: #d97128;
+}
+
+/* line 117, ../sass/design/_colors.scss */
+.test__color.red {
+  background: #e3573e;
+}
+
+/* line 118, ../sass/design/_colors.scss */
+.test__color.red-dark {
+  background: #ca442b;
+}
+
+/* line 120, ../sass/design/_colors.scss */
+.test__color.wine {
+  background: #c24f78;
+}
+
+/* line 121, ../sass/design/_colors.scss */
+.test__color.wine-dark {
+  background: #a84065;
+}
+
+/* line 123, ../sass/design/_colors.scss */
+.test__color.purple {
+  background: #8966cc;
+}
+
+/* line 124, ../sass/design/_colors.scss */
+.test__color.purple-dark {
+  background: #7654b5;
+}
+
+/* line 126, ../sass/design/_colors.scss */
+.test__color.blue {
+  background: #1497cb;
+}
+
+/* line 127, ../sass/design/_colors.scss */
+.test__color.blue-dark {
+  background: #375066;
+}
+
+/* line 128, ../sass/design/_colors.scss */
+.test__color.blue-gray {
+  background: #375066;
+}
+
+/* line 131, ../sass/design/_colors.scss */
+.test__colorbg.dark {
+  background: #222222;
+}
+
+/* line 132, ../sass/design/_colors.scss */
+.test__colorbg.gray {
+  background: #555555;
+}
+
+/* line 133, ../sass/design/_colors.scss */
+.test__colorbg.light {
+  background: #eeeeee;
+}
+
+/*
+Typography
+
+For the love of type
+file: design/_typography.scss
+
+Styleguide 1.0
+*/
+/* line 37, ../sass/design/_typography.scss */
+html {
+  font-size: 62.5%;
+}
+
+/* line 41, ../sass/design/_typography.scss */
+body {
+  color: black;
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+/*
+Header
+
+Use the <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> for defining the headings.
+
+Markup:
+<h1>h1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+<h2>h2. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+<h3>h3. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
+<h4>h4. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+<h5>h5. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h5>
+<h6>h6. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h6>
+
+Styleguide 1.1
+*/
+/*
+Header links
+
+Use the <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> for defining the headings.
+
+:hover    - Highlight the button when hovered.
+:active    - active
+
+Markup:
+<h1><a href="foo {$modifiers}">h1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h1>
+<h2><a href="foo {$modifiers}">h2. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h2>
+<h3><a href="foo {$modifiers}">h3. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h3>
+<h4><a href="foo {$modifiers}">h4. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h4>
+<h5><a href="foo {$modifiers}">h5. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h5>
+<h6><a href="foo {$modifiers}">h6. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h6>
+
+Styleguide 1.1.1
+*/
+/* line 83, ../sass/design/_typography.scss */
+h1, h2, h3, h4, h5, h6 {
+  color: #e3573e;
+  line-height: 1;
+  margin: 0 0 2rem 0;
+  font-style: normal;
+}
+/* line 32, ../sass/_mixin.scss */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #f2883a;
+  text-decoration: none;
+}
+/* line 33, ../sass/_mixin.scss */
+h1 a:link, h2 a:link, h3 a:link, h4 a:link, h5 a:link, h6 a:link {
+  color: #f2883a;
+}
+/* line 34, ../sass/_mixin.scss */
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
+  color: #f2883a;
+}
+/* line 35, ../sass/_mixin.scss */
+h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus {
+  color: #9bc035;
+}
+/* line 36, ../sass/_mixin.scss */
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  color: #9bc035;
+  text-decoration: #e3573e;
+}
+
+/* line 90, ../sass/design/_typography.scss */
+h1 {
+  font-size: 4rem;
+}
+
+/* line 93, ../sass/design/_typography.scss */
+h2 {
+  font-size: 3.5rem;
+}
+
+/* line 96, ../sass/design/_typography.scss */
+h3 {
+  font-size: 3rem;
+}
+
+/* line 99, ../sass/design/_typography.scss */
+h4 {
+  font-size: 2.2rem;
+}
+
+/* line 102, ../sass/design/_typography.scss */
+h5 {
+  font-size: 2.2rem;
+}
+
+/* line 105, ../sass/design/_typography.scss */
+h6 {
+  font-size: 2rem;
+}
+
+/*
+Text variations
+
+Use the <code>&lt;p&gt;</code> for defining the paragraphs
+
+.lead    - Stand out text
+.danger    - danger
+.foo - bar
+
+Markup:
+<div class="{$modifiers}">
+<p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat.  <a href="#">read more</a>  Lorem ipsum dolor sit amet, co
+nsectetur adipisicing elit.
+Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat.  <a href="#">read more</a>  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+</div>
+
+Styleguide 1.3
+*/
+/* line 144, ../sass/design/_typography.scss */
+p {
+  padding: 1rem 0;
+}
+
+/* line 149, ../sass/design/_typography.scss */
+.lead {
+  font-size: 2rem;
+  color: #e3573e;
+}
+
+/* line 155, ../sass/design/_typography.scss */
+.small,
+small {
+  font-size: 1rem;
+}
+
+/*
+links
+
+Links in all its magic glory
+
+:visited - visited
+:focus   - focus
+:hover   - hover
+
+Markup:
+<a href="#" class="{$modifiers}">link</a>
+
+Styleguide 1.4
+*/
+/* line 32, ../sass/_mixin.scss */
+a {
+  color: #e3573e;
+  text-decoration: none;
+}
+
+/* line 33, ../sass/_mixin.scss */
+a:link {
+  color: #e3573e;
+}
+
+/* line 34, ../sass/_mixin.scss */
+a:visited {
+  color: #e3573e;
+}
+
+/* line 35, ../sass/_mixin.scss */
+a:focus {
+  color: #9bc035;
+}
+
+/* line 36, ../sass/_mixin.scss */
+a:hover {
+  color: #9bc035;
+  text-decoration: underline;
+}
+
+/* line 174, ../sass/design/_typography.scss */
+:focus {
+  outline: 0;
+}
+
+/*
+pre
+-------------------------------------
+
+    <pre>
+    .foo {
+      min-height: 100px;
+    }
+    </pre>
+
+ */
+/* line 187, ../sass/design/_typography.scss */
+pre {
+  color: black;
+  background: white;
+  border: 1px solid #e6e6e6;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  padding: 1rem;
+  min-width: 80%;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+/* line 198, ../sass/design/_typography.scss */
+pre:hover {
+  width: 100%;
+  background: #f9fdfe;
+}
+
+/*
+Selection colors
+========================================
+
+ */
+/* line 210, ../sass/design/_typography.scss */
+::-moz-selection {
+  background: #e97e6b;
+  color: #333333;
+}
+
+/* line 211, ../sass/design/_typography.scss */
+::selection {
+  background: #e97e6b;
+  color: #333333;
+}
+
+/* line 214, ../sass/design/_typography.scss */
+:-moz-placeholder {
+  color: #ccc;
+}
+
+/* line 215, ../sass/design/_typography.scss */
+::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+/*
+Effects
+
+Different grafic effects for design elements shadings, circles etc
+
+Markup:
+<div class="circle">
+<img src="public/images/coffee-400.jpg" alt="coffee">
+</div>
+<div>
+<p class="circle">
+<img src="public/images/coffee-400.jpg" alt="coffee">
+</div>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, inventore, totam, voluptatem, id tempore nulla voluptatibus architecto in eaque eos animi similique sed omnis harum sit deserunt iure consequatur temporibus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, inventore, totam, voluptatem, id tempore nulla voluptatibus architecto in eaque eos animi similique sed omnis harum sit deserunt iure consequatur temporibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, inventore, totam, voluptatem, id tempore nulla voluptatibus architecto in eaque eos animi similique sed omnis harum sit deserunt iure consequatur temporibus!
+</p>
+
+Styleguide 2.1
+*/
+/* line 20, ../sass/design/_graphicstyles.scss */
+.circle img {
+  width: 10rem;
+  height: 10rem;
+  -webkit-border-radius: 5rem;
+  -moz-border-radius: 5rem;
+  -ms-border-radius: 5rem;
+  -o-border-radius: 5rem;
+  border-radius: 5rem;
+  border: 4px dotted black;
+}
+
+/* line 27, ../sass/design/_graphicstyles.scss */
+.content .circle img {
+  padding: 0;
+  margin-right: 1rem;
+}
+
+/*
+Shadow
+
+descrption.
+
+Markup:
+<div  class="shadow">
+<img src="public/images/coffee-400.jpg" alt="coffee">
+</div>
+<figure class="shadow">
+  <img src="public/images/coffee-400.jpg" alt="coffee">
+  <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</figcaption>
+</figure>
+
+Styleguide 2.2
+*/
+/* line 49, ../sass/design/_graphicstyles.scss */
+.shadow > * {
+  -webkit-box-shadow: black 3px 3px 8px -4px;
+  -moz-box-shadow: black 3px 3px 8px -4px;
+  box-shadow: black 3px 3px 8px -4px;
+}

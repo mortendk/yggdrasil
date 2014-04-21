@@ -1,0 +1,192 @@
+/*
+table
+===========================
+list basic tables that drupal prints out 
+*/
+
+/*
+Drupal table
+-----------------------------
+Responsive table heavyly inspired form: http://dbushell.com/2012/01/05/responsive-tables-2/
+
+    <table class="sticky-enabled tableheader-processed sticky-table">
+      <caption>Table Caption</caption>
+       <thead><tr><th>Column 1</th><th>Column 2</th><th>Column 3</th> </tr></thead>
+      <tbody>
+       <tr class="odd"><td>some text</td><td><a href="/%23">some link</a></td><td>Abico augue duis. </td> </tr>
+       <tr class="even"><td>some text</td><td><a href="/%23">some link</a></td><td>Augue vicis. </td> </tr>
+       <tr class="odd"><td>some text</td><td><a href="/%23">some link</a></td><td>Bene pagus. </td> </tr>
+       <tr class="even"><td>some text</td><td><a href="/%23">some link</a></td><td>Appellatio interdico torqueo. </td> </tr>
+       <tr class="odd"><td>some text</td><td><a href="/%23">some link</a></td><td>Refero facilisis et. </td> </tr>
+      </tbody>
+    </table>
+
+ */
+
+//colors 
+$table-headerbg: #ddd;
+$table-headerbg-odd: #efefef;
+$table-headerbg-hover:#ddd;
+
+$table-rowbg:#fafafa;
+$table-rowbg-hover:#f4f4f4;
+$table-row-odd:#ffffff;
+$table-row-odd-hover:#f4f4f4;
+
+$table-row-border-color:#ddd;
+$table-cell-border-color:#f4f4f4;
+
+$table-drag-bg: yellow;
+$table-dragprevius-bg: pink;
+@include breakpoint($medium-down){
+  table{
+    display: block;
+  }
+  thead{
+    display:block;
+    float:left;
+  }
+  th{
+    display: block;
+    text-align:right;
+  }
+  tbody{
+    display: block;
+    width: auto;
+    overflow-x:auto;
+    position:relative;
+    white-space: nowrap; 
+  }
+  tbody tr{
+    display: inline-block;
+    vertical-align: top;
+  }
+  td{
+    display:block;
+
+  }
+  
+  //------------theme 
+  tbody{
+    cursor: ew-resize; 
+  }
+  th,td{
+    line-height:3rem;
+    vertical-align: bottom;
+    padding:0 1rem;
+    border-bottom:1px solid $table-cell-border-color;
+    border-right:1px solid $table-cell-border-color;
+  }
+  th{
+    background:$table-headerbg;
+    border-right:2px solid darken($table-cell-border-color, 20%);
+    text-transform: uppercase;
+  }
+  th:nth-of-type(odd){
+    background:$table-headerbg-odd;
+  }
+  tr{
+    background:$table-rowbg;
+  }
+  tr:nth-of-type(odd){
+    background:$table-row-odd;
+  }  
+}//breaktpoint: $medium-down
+
+@include breakpoint($large){
+  table{
+    width:100%;
+    border:1px solid $table-row-border-color;
+    margin:2rem 0;
+  }
+  //header
+  th{
+    font-weight:bold;
+    background: $table-headerbg;
+    text-transform: uppercase
+  }
+  th:nth-of-type(odd){
+    background:$table-headerbg-odd;
+  }
+  th:hover{
+    background:$table-headerbg-hover;
+  }
+  th:nth-of-type(odd){
+    // background:#ddd;
+  }
+  //rows
+  tr{
+    border-bottom:1px solid $table-row-border-color;
+    background:$table-rowbg;
+  }
+  tr:hover{
+    background:$table-rowbg-hover;
+  }
+  tr:nth-of-type(odd){
+    background:$table-row-odd;
+  }
+  tr:nth-of-type(odd):hover{
+    background:$table-row-odd-hover;
+  }
+  //datacell
+  th,td{
+    padding:1rem;
+    border-left:1px solid $table-cell-border-color;
+  }
+
+  //datacell width
+  th:nth-of-type(1){ }
+  th:nth-of-type(2){ }
+  th:nth-of-type(3){ }
+  th:nth-of-type(4){ }
+  th:nth-of-type(5){ }
+  th:nth-of-type(6){ }
+
+}//breaktpoint: $large
+
+
+
+
+/*
+Drupal tabledrag
+-----------------------------
+
+
+    <table id="table-tabledrag" class="sticky-enabled tabledrag-processed tableheader-processed sticky-table">
+    <caption>Table Caption</caption>
+     <thead><tr><th>Column 1</th><th>Column 2</th><th>Column 3</th><th class="tabledrag-hide" style="display: none;">Column 4</th> </tr></thead>
+    <tbody>
+     <tr class="draggable odd"><td><a href="#" class="tabledrag-handle" title="Drag to re-order" style=""><div class="handle">&nbsp;</div></a>some text</td><td><a href="/%23">some link</a></td><td>Premo. Occuro nunc facilisi similis natu pecus quibus voco euismod ut ad nobis tum typicus aptent appellatio tum feugiat at euismod veniam utinam torqueo. </td><td class="weight tabledrag-hide" style="display: none;">1</td> </tr>
+     <tr class="draggable even"><td><a href="#" class="tabledrag-handle" title="Drag to re-order" style=""><div class="handle">&nbsp;</div></a>some text</td><td><a href="/%23">some link</a></td><td>In hos. Iaceo pneum saluto enim pertineo cui et refoveo obruo secundum neo antehabeo tego occuro pertineo esca quis validus inhibeo oppeto ad letalis. </td><td class="weight tabledrag-hide" style="display: none;">2</td> </tr>
+     <tr class="draggable odd"><td><a href="#" class="tabledrag-handle" title="Drag to re-order" style=""><div class="handle">&nbsp;</div></a>some text</td><td><a href="/%23">some link</a></td><td>Erat esca cogo occuro humo metuo typicus letalis loquor occuro bene inhibeo consectetuer abico sagaciter pecus. Amet amet zelus ludus iaceo aptent gilvus ymo. </td><td class="weight tabledrag-hide" style="display: none;">3</td> </tr>
+     <tr class="draggable even"><td><a href="#" class="tabledrag-handle" title="Drag to re-order" style=""><div class="handle">&nbsp;</div></a>some text</td><td><a href="/%23">some link</a></td><td>Esse consequat huic laoreet elit quis virtus in ulciscor luptatum feugiat valetudo veniam verto aptent iustum ideo. Loquor similis ille comis persto meus enim. </td><td class="weight tabledrag-hide" style="display: none;">4</td> </tr>
+     <tr class="draggable odd"><td><a href="#" class="tabledrag-handle" title="Drag to re-order" style=""><div class="handle">&nbsp;</div></a>some text</td><td><a href="/%23">some link</a></td><td>Saepius comis caecus turpis damnum nobis. Pertineo valetudo pecus lucidus natu veniam sudo scisco luptatum defui consectetuer nutus patria dolor vulputate modo verto iustum. </td><td class="weight tabledrag-hide" style="display: none;">5</td> </tr>
+     <tr class="draggable even"><td><a href="#" class="tabledrag-handle" title="Drag to re-order" style=""><div class="handle">&nbsp;</div></a>some text</td><td><a href="/%23">some link</a></td><td>Ullamcorper tum volutpat letalis patria premo commoveo quia scisco ille praemitto tincidunt adipiscing venio vindico venio refero turpis scisco tation pneum immitto quidem. Torqueo. </td><td class="weight tabledrag-hide" style="display: none;">6</td> </tr>
+     <tr class="draggable odd"><td><a href="#" class="tabledrag-handle" title="Drag to re-order" style=""><div class="handle">&nbsp;</div></a>some text</td><td><a href="/%23">some link</a></td><td>Ideo ullamcorper gravis humo verto esse. Pertineo oppeto validus consectetuer verto esca erat sed in abbas antehabeo lucidus cui scisco wisi camur rusticus gemino. </td><td class="weight tabledrag-hide" style="display: none;">7</td> </tr>
+     <tr class="draggable even"><td><a href="#" class="tabledrag-handle" title="Drag to re-order" style=""><div class="handle">&nbsp;</div></a>some text</td><td><a href="/%23">some link</a></td><td>Si refoveo lobortis jugis iustum tincidunt aliquam valetudo os commodo ymo abluo validus fere. Huic lenis tation duis esse laoreet decet sit damnum eros. </td><td class="weight tabledrag-hide" style="display: none;">8</td> </tr>
+    </tbody>
+    </table>
+
+*/    
+
+tr.drag-previous{
+  background: $table-dragprevius-bg;
+}
+tr.drag{
+  background:$table-drag-bg;
+  cursor: hand
+}
+
+
+th.sorting_asc{
+  @extend .fa;
+  @extend .fa-arrow-up; //fa-arrows-v
+  @extend .fa-fw;
+  display: table-cell;
+}
+
+th.sorting_desc{
+  @extend .fa;
+  @extend .fa-arrow-down;
+  display: table-cell;
+}

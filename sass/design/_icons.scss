@@ -1,0 +1,46 @@
+/*
+Icons
+============================
+
+icons
+------------------------------
+collection of icons & diffent styles to enhance an element
+new markers etc.
+
+
+ */
+
+
+/*
+scroll to top
+----------------------------
+
+    <a href="#main" class="scrolltotop">link</a>
+ */
+
+.scrolltotop{
+  display: block;
+  @include border-radius(7px 7px 0 0);
+  @include opacity(0);
+  transition: opacity 0.4s;
+  @include a-linkcolor($white,$white,none);
+  background:$black;
+  position: fixed;
+  right:10rem;
+  bottom:0rem;
+  z-index:10000;
+  width:5rem;
+  height:5rem;
+  text-align:center;
+  .icon{
+    @extend .fa;
+    @extend .fa-arrow-circle-o-up;
+    color:$white;
+    font-size: 3rem;
+    line-height:4rem;
+   }
+}
+.scrolltotop.show{
+  @include opacity(0.9);
+}
+

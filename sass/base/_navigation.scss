@@ -1,0 +1,156 @@
+/*
+Navigation
+============
+
+Navigation
+============
+Default navigation
+
+    <nav>
+      <ul>
+        <li><a href="">frontpage</a></li>
+        <li><a href="">news</a></li>
+        <li><a href="">info</a></li>
+        <li><a href="">contact</a></li>
+      </ul>
+    </nav>
+
+*/
+nav ul{
+ @extend %nav-inline;
+}
+
+nav li{
+}
+
+/*
+inline navigation
+-------------------------------
+**.nav-incline ** class can be added as needed
+    <nav>
+      <ul class="nav-inline">
+        <li><a href="">frontpage</a></li>
+        <li><a href="">news</a></li>
+        <li><a href="">info</a></li>
+        <li><a href="">contact</a></li>
+      </ul>
+    </nav>
+
+    <hr>
+
+    <nav class="nav-inline">
+      <ul>
+        <li><a href="">frontpage</a></li>
+        <li><a href="">news</a></li>
+        <li><a href="">info</a></li>
+        <li><a href="">contact</a></li>
+      </ul>
+    </nav>
+
+    <hr>
+
+    <div class="nav-inline">
+      <nav>
+        <ul>
+          <li><a href="">frontpage</a></li>
+          <li><a href="">news</a></li>
+          <li><a href="">info</a></li>
+          <li><a href="">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+*/
+
+.nav-inline,
+%nav-inline{
+  li{
+    display:inline-block;
+    padding-right:0.5rem;
+  }
+  a{ display:inline-block; }
+}
+
+/*
+Center navigation
+--------------------------------
+
+    <div class="nav-center">
+    <nav>
+      <ul>
+        <li><a href="">frontpage</a></li>
+        <li><a href="">news</a></li>
+        <li><a href="">info</a></li>
+        <li><a href="">contact</a></li>
+      </ul>
+    </nav>
+    </div>
+
+    <hr>
+
+    <nav class="nav-center">
+      <ul>
+        <li><a href="">frontpage</a></li>
+        <li><a href="">news</a></li>
+        <li><a href="">info</a></li>
+        <li><a href="">contact</a></li>
+      </ul>
+    </nav>
+
+
+*/
+
+
+
+.nav-center,
+%nav-center{
+  nav{ text-align: center; }
+  ul{ text-align: center; }
+  li{  display:inline-block; padding-right:0.5rem;}
+  a{ display:inline-block; }
+}
+
+
+
+
+/*
+navigation right
+--------------------------------
+
+    <div class="nav-right">
+    <nav>
+      <ul>
+        <li><a href="">frontpage</a></li>
+        <li><a href="">news</a></li>
+        <li><a href="">info</a></li>
+        <li><a href="">contact</a></li>
+      </ul>
+    </nav>
+    </div>
+
+    <hr>
+
+    <nav class="nav-right">
+      <ul>
+        <li><a href="">frontpage</a></li>
+        <li><a href="">news</a></li>
+        <li><a href="">info</a></li>
+        <li><a href="">contact</a></li>
+      </ul>
+    </nav>
+
+
+*/
+
+
+
+.nav-right,
+%nav-right{
+  nav{ text-align: right; }
+  ul{ text-align: right; }
+  li{  display:inline-block; padding-right:0.5rem;}
+  a{ display:inline-block; }
+}
+
+.l-main nav{
+}
+

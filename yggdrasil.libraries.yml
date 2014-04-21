@@ -5,12 +5,12 @@ base:
       css/layout.css: {}
       css/style.css: {}
       css/colors.css: {}
-      css/print.css: { media: print }
+      css/print.css: { }
 
 maintenance_page:
   version: VERSION
   css:
     theme:
-      css/maintenance-page.css: {}
+      maintenance.css: {}
   dependencies:
     - system/maintenance

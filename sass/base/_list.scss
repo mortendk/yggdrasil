@@ -1,0 +1,111 @@
+/*
+List element
+
+descrption.
+
+.center    - center
+.right    - center
+
+Markup:
+<a href="#" class="button {$modifiers}">Link Button</a>
+<button class="button {$modifiers}">Button Element</button>
+
+Styleguide 2.1
+*/
+/*
+List
+===========================
+
+
+List default
+-----------------------
+    <ul>
+      <li>lorem</li>
+      <li>foobar</li>
+      <li>foobar</li>
+    </ul>
+
+*/
+ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+  }
+li{ }
+
+
+/*
+content list
+---------------------------------
+Lists inside of content
+    <div class="content">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, rerum, assumenda officia itaque magnam voluptatibus repellat nemo voluptatem omnis explicabo provident hic eum inventore facilis quasi sed doloribus a aliquid!
+      <ul>
+        <li>lorem</li>
+        <li>foobar</li>
+        <li>foobar</li>
+      </ul>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, rerum, assumenda officia itaque magnam voluptatibus repellat nemo voluptatem omnis explicabo provident hic eum inventore facilis quasi sed doloribus a aliquid!
+      </p>
+
+    </div>
+*/
+
+
+.node__content ul{
+  padding:0 0 1.5rem 0.5rem;
+}
+.node__content li{
+//  background: transparent url('../images/icon/arrow.png') no-repeat 0 4px ;
+  padding:0 0 0.5rem 0.7rem;
+  list-style: none;
+}
+
+.node__content .icon li{
+  padding:0 0 0.5rem 0.7rem;
+  list-style: none;
+}
+
+
+/*
+Center list
+----------------------
+@todo: should this class be called inline-list-center?
+
+
+    <ul class="center">
+      <li>lorem</li>
+      <li>foobar</li>
+      <li>foobar</li>
+    </ul>
+*/
+
+ul.center{
+  text-align: center;
+  li{  display:inline-block; padding-right:0.5rem;}
+  a{ display:inline-block; }
+}
+
+
+/*
+right list
+----------------------
+align a list right
+@todo should this class be called inline-list-right
+
+    <ul class="right">
+      <li>lorem</li>
+      <li>foobar</li>
+      <li>foobar</li>
+    </ul>
+*/
+
+
+ul.right{
+  text-align: right;
+  li{  display:inline-block; padding-right:0.5rem;}
+  a{ display:inline-block; }
+}
+
+

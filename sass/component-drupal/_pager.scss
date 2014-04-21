@@ -1,0 +1,38 @@
+/*
+Pager
+===========================================
+Drupals default pager for admin task
+
+    <ul class="pager">
+      <li class="pager-first first"><a title="Go to first page" href="#"> first</a></li>
+      <li class="pager-previous"><a title="Go to previous page" href="#"> previous</a></li>
+      <li class="pager-ellipsis">...</li>
+      <li class="pager-item"><a title="Go to page 5" href="#">5</a></li>
+      <li class="pager-item"><a title="Go to page 6" href="#">6</a></li>
+      <li class="pager-item"><a title="Go to page 7" href="#">7</a></li>
+      <li class="pager-item"><a title="Go to page 8" href="#">8</a></li>
+      <li class="pager-current">9</li>
+      <li class="pager-item"><a title="Go to page 10" href="#">10</a></li>
+      <li class="pager-item"><a title="Go to page 11" href="#">11</a></li>
+      <li class="pager-item"><a title="Go to page 12" href="#">12</a></li>
+      <li class="pager-item"><a title="Go to page 13" href="#">13</a></li>
+      <li class="pager-ellipsis">...</li>
+      <li class="pager-next"><a title="Go to next page" href="#">next </a></li>
+      <li class="pager-last last"><a title="Go to last page" href="#">last </a></li>
+    </ul>
+*/
+
+.pager li{
+  @include remfix(padding-left,0.5);
+  @include linkcolor(#999,#333,none);
+  display: inline-block;
+}
+
+.pager-current { font-weight: bold;}
+.pager-first,.pager-previous,.pager-next,.pager-last{ }
+.pager-ellipsis{ color:gray; }
+
+.item-list-pager{
+  clear:both;
+  @extend %nav-center;
+}

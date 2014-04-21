@@ -1,0 +1,19 @@
+/*
+config
+================================
+This file contains all the variables that can be used
+* Gridsystem is defined in layout/layout.scss
+* colors : design/colors.scss
+* fonts : typograghy.scss
+*/
+
+//Singularity
+//toggle g key for grid testing
+//remember to add in the js/singularity-grid-helper.js in the .info
+//Documentation
+$background-grid-color:teal;
+@include grid-toggle;
+
+//compass defaults:
+$default-border-radius: 3px;
+

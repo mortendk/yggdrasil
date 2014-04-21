@@ -1,0 +1,78 @@
+/*
+Views filter
+============================
+
+views filter
+--------------------------------
+
+
+<aside class="view-filters">
+  <form class="ctools-auto-submit-full-form" action="/" method="get" id="views-exposed-form-banner-panel-pane-2" accept-charset="UTF-8"><div class="views-exposed-form">
+  <div class="views-exposed-widgets clearfix">
+  
+  <div id="edit-field-banner-language-value-wrapper" class="views-exposed-widget views-widget-filter-field_banner_language_value">
+    <label for="edit-field-banner-language-value">
+
+    <div class="views-widget">
+      <div>
+        <select id="edit-field-banner-language-value" name="field_banner_language_value">
+          <option value="All" selected="selected">- Any -</option>
+          <option value="Danish">Danish</option>
+          <option value="English">English</option>
+          <option value="Finish">Finish</option>
+          <option value="Norweigian">Norweigian</option>
+          <option value="Swedish">Swedish</option>
+        </select>
+      </div>
+    </div>
+              </div>
+    <div id="edit-field-banner-size-value-wrapper" class="views-exposed-widget views-widget-filter-field_banner_size_value">
+      <label for="edit-field-banner-size-value">banner size (field_banner_size)          </label>
+                        <div class="views-widget">
+          
+<div>
+ <select id="edit-field-banner-size-value" name="field_banner_size_value"><option value="All" selected="selected">- Any -</option><option value="1">125x125</option><option value="2">260x50</option><option value="3">300x250</option><option value="4">336x280</option><option value="5">400x400</option><option value="6">728x90</option><option value="7">930x180</option></select>
+</div>
+        </div>
+              </div>
+                    <div class="views-exposed-widget views-submit-button">
+      <input class="ctools-use-ajax ctools-auto-submit-click js-hide" type="submit" id="edit-submit-banner" name="" value="Apply" />    </div>
+      </div>
+</div>
+</form>    </aside>
+
+
+
+ */
+.view-filters{
+  width:100%;
+  @extend .cf;
+  
+  form > div{ 
+    display:block;
+    // float:left;
+    // min-width:49%;
+  }  
+  .views-exposed-form{ background: blue; }
+  .form-item{ display:inline-block }
+  label{
+    text-transform: uppercase;
+    vertical-align: baseline;
+    text-align: left;
+
+    @include breakpoint($medium){
+
+    }//breaktpoint: $medium
+    @include breakpoint($large){
+      display: inline-block;
+      width:auto;
+      min-width:8rem;
+    }//breaktpoint: $large
+  }
+  
+  select{
+    // min-width: 10rem;
+    // max-width: 15rem;
+  }
+  .views-submit-button{}
+}

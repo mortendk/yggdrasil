@@ -1,0 +1,14 @@
+name: sysadmin_medium
+label: 'sysadmin medium'
+status: true
+uuid: 1e5a2243-dcfd-4570-8f00-0c99eea276ba
+langcode: en
+dependencies: {  }
+effects:
+  c2b69684-19f1-4e9e-8717-23b868480e71:
+    uuid: c2b69684-19f1-4e9e-8717-23b868480e71
+    id: image_resize
+    weight: 2
+    data:
+      width: 1200
+      height: 760

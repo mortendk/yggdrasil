@@ -8,10 +8,12 @@ core: 8.x
 # -- CSS -----------------------------------------------------------------------
 stylesheets:
   all:
-    - css/layout.css
-  print:
-    - css/print.css
+    - dragons.css
+    - css/yggdrasil.css
+#  print:
+#    - css/print.css
 # screen:
+#    - screen.css
 
   stylesheets-remove:
     - system.theme.css
@@ -26,7 +28,7 @@ stylesheets:
 # stylesheets-override:
 #  - filenameiwannaoverwrite.css
 
-# -- JS -----------------------------------------------------------------------
+# -- JS ------------------------------------------------------------------------
 scripts:
  - js/scripts.js
 
@@ -46,6 +48,11 @@ regions:
   triptych_first: 'Triptych first'
   triptych_middle: 'Triptych middle'
   triptych_last: 'Triptych last'
+
+
+# -- settings ------------------------------------------------------------------
+settings:
+  shortcut_module_link: '0'
 
 
 # engine: phptemplate //if you dont like progress ;)

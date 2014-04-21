@@ -1,0 +1,79 @@
+/*
+Images togo
+
+Images are pretty to look at.
+
+Markup:
+<figure class="{$modifiers}">
+  <img src="../styleguide-template/images/coffee-400.jpg" alt="coffee">
+  <figcaption>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  </figcaption>
+</figure>
+
+Styleguide 2.1
+*/
+
+
+img {
+  max-width: 100%;
+  height:auto;
+  border: 0;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
+}
+// ie8 hack
+@media \0screen {
+  img { width: auto; }
+}
+figure {
+  width:auto;
+  margin:0;
+  padding:0;
+  display:inline-block;
+}
+figcaption {
+  text-align: left;
+  word-wrap: break-word;
+}
+
+figcaption{
+  font-size:1.2rem
+}
+
+/*
+Images Inline
+
+Inline images
+
+.right    - image is right aligned
+.center   - image is center aligned
+
+Markup:
+<p class="node__content">
+  <img src="../styleguide-template/images/coffee-400.jpg" class="{$modifiers}" alt="coffee">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, inventore, totam, voluptatem, id tempore nulla voluptatibus architecto in eaque eos animi similique sed omnis harum sit deserunt iure consequatur temporibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, inventore, totam, voluptatem, id tempore nulla voluptatibus architecto in eaque eos animi similique sed omnis harum sit deserunt iure consequatur temporibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, inventore, totam, voluptatem, id tempore nulla voluptatibus architecto in eaque eos animi similique sed omnis harum sit deserunt iure consequatur temporibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, inventore, totam, voluptatem, id tempore nulla voluptatibus architecto in eaque eos animi similique sed omnis harum sit deserunt iure consequatur temporibus!
+</p>
+
+Styleguide 3.1
+*/
+
+
+.node__content img{
+  float:left;
+  padding:0 1rem 1rem 0
+}
+
+.node__content figure{
+  padding:0 1rem 1rem 0;
+  float:left;
+}
+.node__content figure img{
+  float:none;
+}
+
+.node__content img.right,
+.node__content .right img{
+  float:right;
+  padding:0 1rem 1rem 0
+}

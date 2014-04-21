@@ -2,31 +2,41 @@
 /*
 Preprocess
  */
-function yggdrasil_preprocess_html(&$variables) { }
+
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ */
+function yggdrasil_preprocess_html(&$variables) {
+}
+
+function yggdrasil_node_preprocess_html(&$variables) {
+  // If on an individual node page, add the node type to body classes and as a
+  // variale
+  if (($node = \Drupal::request()->attributes->get('node')) && $node instanceof NodeInterface) {
+    $variables['attributes']['class'][] = drupal_html_class('node-type--' . $node->getType());
+  }
+}
+
+
 
 function yggdrasil_preprocess_block(&$variables) { }
 
 function yggdrasil_preprocess_node(&$variables) { }
 
 function yggdrasil_preprocess_field(&$variables, $hook) {
-  /*
-  test if the field is multiple or not
-  */
-  if ( isset($element['#items']) ) {
-    if( $element['#items']->getFieldDefinition()->getCardinality() != "1"){
-      $variables['multiple'] = TRUE;
-    }
-  }
-  /*
-  variables for the field classname
- */
-  $variables['entity_type'] = strtr($element['#entity_type'], '_', '-');
+  //we want to know if the field is single or multiple
+  // $variables['multiple'] = $element['#items']->getFieldDefinition()->isMultiple();
+  //css
   $variables['field_name'] = strtr($element['#field_name'], '_', '-');
   $variables['field_type'] = strtr($element['#field_type'], '_', '-');
-
-
+  $variables['field_label'] = strtr($element['#label_display'], '_', '-');
+  $variables['attributes']['class'] = array(
+    'field-name--' . $variables['field_name'],
+    'field-type--' . $variables['field_type'],
+    'field-label--' . $element['#label_display'],
+  );
 }
-
 
 /*
 Theme Suggestions

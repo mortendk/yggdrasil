@@ -1,0 +1,71 @@
+/*
+Layout Float 2
+===============================
+
+Layout Float 2
+--------------------------------
+Floats elements breaks them on a count of 2,2,1
+Detects on a <article> or <ul><li>
+small: 1
+medium: 2
+large: 2
+
+
+    <section class="lf-2"> 
+      <article>foo</article>
+      <article>foo</article>      
+      <article>foo</article>      
+      <article>foo</article>      
+      <article>foo</article>
+      <article>foo</article>      
+      <article>foo</article>      
+      <article>foo</article>      
+    <section>
+
+    <section class="lf-2"> 
+      <ul>
+      <li>foo</li>
+      <li>foo</li>      
+      <li>foo</li>      
+      <li>foo</li>      
+      <li>foo</li>
+      <li>foo</li>      
+      <li>foo</li>      
+      <li>foo</li>      
+      </ul>
+    <section>
+
+ */
+%lf-2,
+.lf-2{
+  @extend %cf;
+  //views filters ?
+  .view-filters{ }
+
+  @include breakpoint($medium) { 
+    > div,
+    > article,
+    > ul li{ 
+      @include float-span(6, $grid:12);
+    }
+    > div:nth-of-type(2n),
+    > article:nth-of-type(2n),
+    > ul li:nth-of-type(2n) {      
+      @include float-span(6, last, $grid:12); 
+    } 
+  }
+  
+  @include breakpoint($large) {
+    > div,
+    > article,
+    > ul li{
+      @include float-span(6, $grid:12);
+    }
+    > div:nth-of-type(2n),
+    > article:nth-of-type(2n),
+    > ul li:nth-of-type(2n) { 
+      @include float-span(6, last, $grid:12); 
+    }
+  }
+
+}

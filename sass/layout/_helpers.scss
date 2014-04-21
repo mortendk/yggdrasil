@@ -1,0 +1,211 @@
+/*
+Helpers
+==================================
+
+Helpers
+==================================
+small helper tools for layout
+
+
+Clearfix
+--------------------
+yes we got clearfix ...
+
+    <!--
+
+    .foo{
+      @extend .cf;
+    }
+
+
+    <div class="cf">
+      ...
+    </div>
+    -->
+*/
+%cf:before, %cf:after, .cf:before, .cf:after { content:""; display:table; }
+%cf:after, .cf:after { clear:both; }
+%cf, .cf { zoom:1; }
+
+
+/*
+Align
+=============================
+Different helpers for positioning
+
+Centercenter
+---------------------------
+the child centers both horizontal & vertical
+**classes**
+.l-centercenter( %l-centercenter   )
+
+
+    <div class="l-centercenter styleguidetest_l-centercenter">
+      <div>using a class: .l-centercenter;</div>
+    </div>
+
+    <div class="styleguide_test_l-centercenter-extend styleguidetest_l-centercenter">
+        <div>@extend %l-centercenter</div>
+    </div>
+
+    <div class="l-centercenter styleguidetest_l-centercenter">
+      <img src="../../styleguide-theme/coffee-120.jpg" alt="vuf">
+    </div>
+
+    <div class="l-centercenter styleguidetest_l-centercenter">
+        <span> inline </span>
+    </div>
+
+
+
+*/
+//require a width / height
+%l-centercenter, .l-centercenter {
+  width:100%; height:100;
+  position:relative; //child is absolute
+}
+%l-centercenter > *,
+.l-centercenter > *{
+  left:50%; top:50%; //magic
+  transform:translate(-50%,-50%); //stuff
+  -webkit-transform:translate(-50%,-50%);
+  position:absolute; //parent is relative
+}
+
+//test classes for the styleguide
+.styleguidetest_l-centercenter{
+  width:49%; height:200px;
+  background-color:gray;
+  font-size:12px;
+  display:inline-block;
+  margin-right:1px;
+
+}
+.styleguide_test_l-centercenter-extend{
+  @extend %l-centercenter;
+  background-color:#eee;
+}
+
+/*
+Right
+-----------------------------------
+
+
+ */
+
+/*
+Hidden
+--------------------------------------
+**.hidden**
+Hide for both screenreaders and browsers
+css-discuss.incutio.com/wiki/Screenreader_Visibility
+
+    <div class="hidden">
+      foobar
+    </div>
+*/
+
+%hidden,
+.hidden { display: none; visibility: hidden; }
+
+/*
+visuallyhidden
+--------------------------
+* [Hide only visually, but have it available for screenreaders: by Jon Neal. ](www.webaim.org/techniques/css/invisiblecontent/)
+* [j.mp/visuallyhidden](j.mp/visuallyhidden)
+
+    <div class="visuallyhidden">
+      foobar
+    </div>
+
+    <div class="visuallyhidden focusable">
+      foobar
+    </div>
+
+*/
+%visuallyhidden,
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+// Extends the .visuallyhidden class to allow the element to be focusable when
+// navigated to via the keyboard: drupal.org/node/897638 */
+%visuallyhidden.focusable:active, %visuallyhidden.focusable:focus,
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/*
+invisible
+-----------------------------------
+Hide visually and from screenreaders, but maintain layout
+
+    <div class="invisible">
+      foobar
+    </div>
+
+ */
+
+.invisible { visibility: hidden; }
+
+
+/*
+visible phone, table & desktop
+------------------------------------
+Quick n dirty classes to inject directly - else use the gridsystem's sass ;)
+
+phone: max-width: 480px
+
+tablet: min-width: 481px - max-width: 979px
+
+desktop
+
+**classes**
+.visible-phone
+.visible-tablet
+.visible-desktop
+.visible-print
+.hidden-phone
+.hidden-tablet
+.hidden-desktop
+.hidden-print
+
+
+    <H3>status</h3>
+    <div class="visible-phone"> visible-phone </div>
+    <div class="visible-tablet"> visible-tablet </div>
+    <div class="visible-desktop"> visible-desktop </div>
+    <div class="visible-print"> visible-print </div>
+
+    <div class="hidden-phone"> hidden-phone </div>
+    <div class="hidden-tablet"> hidden-tablet </div>
+    <div class="hidden-desktop"> hidden-desktop </div>
+    <div class="hidden-print"> hidden-print </div>
+
+ */
+
+// Quick n dirty hiding & showing on desktops, tablet & mobile
+.visible-phone   { display: none;}
+.visible-tablet  { display: none;}
+.visible-desktop { display: block;}
+.hidden-phone    { display: block;}
+.hidden-tablet   { display: block;}
+.hidden-desktop  { display: none;}
+
+//phone
+@media (max-width: 480px) {
+  .visible-phone  {display: block;}
+  .hidden-phone   {display: none;}
+  .hidden-desktop {display: block;}
+  .visible-desktop {display: none;}
+}
+//tablet
+@media (min-width: 481px) and (max-width: 979px) {
+  .visible-tablet  {display: block;}
+  .hidden-tablet   {display: none;}
+  .hidden-desktop  {display: block;}
+  .visible-desktop {display: none;}
+}
+//print
+.visible-print { display: none}
+.hidden-print{display:block}
+@media print {
+  .hidden-print { display: none}
+  .visible-print { display: block}
+}

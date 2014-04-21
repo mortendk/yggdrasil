@@ -1,0 +1,127 @@
+/*
+Design
+=============================
+
+Design
+*/
+
+body{
+   background: $bgcolor;
+}
+
+
+
+/*
+Header
+=====================================================
+Header & navigation animation
+Menu for small devices is defined in component/_menu-mobile.scss
+
+    <div class="l-container" id="top">
+
+      <div class="l-smalldevice-top">
+        <a href="/" class="smalldevice-logo">Mobile logo</a>
+        <a href="#" class="smalldevice-icon"></a>
+      </div>
+
+      <header role="banner" class="headlarge">
+        <div class="header">
+          <a href="/" class="logo">$sitename</a>
+          <?php print $content['header']; ?>
+        </div>
+      </header>
+
+      <?php if($content['top']): ?>
+        <div class="l-pagetop">
+          <div class="lr">
+            <?php print $content['top']; ?>
+          </div>
+        </div>
+      <?php endif; ?>
+
+      <main role="main" class="singularityhelper">
+        <?php print $content['main']; ?>
+      </main>
+
+      <footer role="contentinfo">
+        <div class="footer">
+          <div><?php print $content['footer_1']; ?></div>
+          <div><?php print $content['footer_2']; ?></div>
+          <div><?php print $content['footer_3']; ?></div>
+          <div><?php print $content['footer_4']; ?></div>
+        </div>
+
+        <div class="l-pagebottom">
+          <div  class="copyright">
+          <?php print $content['footer_5']; ?>
+          </div>
+        </div>
+
+      </footer>
+
+      <a href="#top" class="scrolltotop" title="scroll to the top"><i class="icon"></i></a>
+
+    </div>
+
+ */
+header[role="banner"]{
+
+}
+/*
+This menu must be stcky after X pixels
+
+ */
+
+.logo{
+  background: transparent url('../images/logo.png') no-repeat top left;
+  display:block;
+  text-indent: -999px;
+}
+
+
+
+/*
+l-pagetop
+---------------------------------------------
+ */
+.l-pagetop{
+
+}
+
+
+/*
+Footer
+=========================
+
+    <footer role="contentinfo">
+      <div class="footer">
+        <div>
+          <h2>Curabitur blandit tempus porttitor</h2>
+          <p>Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.</p>
+        </div>
+        <div>
+          <h2>Curabitur blandit tempus porttitor</h2>
+          <p>Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.</p>
+        </div>
+        <div>
+          <h2>Curabitur blandit tempus porttitor</h2>
+          <p>Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.</p>
+        </div>
+        <div>
+          <h2>Curabitur blandit tempus porttitor</h2>
+          <p>Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.</p>
+        </div>
+      </div>
+
+      <div class="l-pagebottom">
+        <div  class="copyright">
+          <p>Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.</p>
+        </div>
+      </div>
+
+    </footer>
+
+ */
+
+footer[role="contentinfo"]{
+}

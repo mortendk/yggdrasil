@@ -1,0 +1,852 @@
+/*
+Drupal Forms
+==============
+
+Drupal Forms
+-------------------------------
+All the forms based on Druapls & motherships markup
+
+*/
+
+$form-label-width : 26%;
+$form-border-color: #ccc;
+$form-required-color: $blue;
+$form-divider-color:lighten($blue, 55%);
+$form-input-width: 70% ;
+form{
+  margin:1rem 0;
+  position:relative;
+}
+form.node-form{ }
+
+/*
+wrappers
+-------------------------
+basic wrappers on all drupal forms
+ */
+.form-wrapper,
+.field-type-text,
+.field-type-list-text,
+.field-type-image{
+  position:relative;
+
+  &:hover{
+    background: $form-divider-color;
+  }
+}
+.form-item{
+  padding:1rem 0;
+  border-bottom:1px solid $form-divider-color;
+
+  &:hover{
+    // background: $form-divider-color;
+  }
+}
+
+/*
+label
+-----------------------------
+ basic styles for labels
+ */
+
+form label{
+  display:inline-block;
+  vertical-align: top;
+  @include breakpoint($medium-down){
+    display:block;
+    width: 100%;
+    text-align: left;
+  }//breaktpoint: $small
+
+  @include breakpoint($large){
+    width: $form-label-width;
+    text-align:right;
+    margin-right:2%;
+  }//breaktpoint: $medium-up
+
+  &:hover{
+    cursor: pointer;
+    font-weight:bold;
+  }
+}
+
+.field-widget-options-select label{
+
+  @include breakpoint($medium-up){
+    width: $form-label-width;
+    text-align:right;
+    margin-right:2%;
+
+  }//breaktpoint: $medium-up
+
+}
+
+//Form label required
+.form-required{
+
+  label{
+    color: $form-required-color;
+  }
+
+  label:after{
+    content:' *';
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"]{
+    border-color:$form-required-color;
+  }
+}
+
+form.node-form .vertical-tabs-panes label{
+  display:inline-block;
+  width:90%;
+  text-align: left;
+}
+
+
+/*
+Input
+--------------------------------------
+
+ */
+
+/*
+textfield
+------------------
+
+    <div class="form-item form-type-textfield">
+      <label for="foo">Machine name source</label>
+
+      <input type="text" id="foo" value="" size="30" maxlength="128">
+    </div>
+
+    <div class="form-item form-type-textfield">
+      <label for="foo">Machine name source</label>
+
+      <input type="text" id="foo" value="" size="30" maxlength="128">
+    </div>
+*/
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+
+  @include border-radius(3px);
+  border:1px solid $form-border-color;
+  padding:0.5rem 1rem;
+  transition: all 1s;
+  width:95%;
+  @include breakpoint($large){
+    width: $form-input-width;
+  }//breaktpoint: $large
+
+  &:hover, a:focus{
+    @include breakpoint($large){
+      width:$form-input-width + 1;
+    }//breaktpoint: $large
+    border:1px solid $form-border-color;
+    border:1px solid $blue;
+    @include box-shadow(0 0 3px rgba($blue, 0.7));
+  }
+  &:disabled{
+    border:1px dashed $gray-light;
+    @include box-shadow(0 0 3px rgba(black, 0.4));
+    background:$gray-light;
+    color:$gray-light;
+    font-style: italic;
+  }
+  &:disabled:hover{
+    width: $form-input-width +1;
+    cursor: default;
+    border:1px dashed $gray-light;
+  }
+
+}
+
+
+/*
+textfield required
+------------------
+    <div class="form-item form-type-machine-name form-required">
+      <label class="required" for="foo">Machine-readable name</label>
+
+      <input type="text" id="foo" value="" size="30" maxlength="64" required="">
+
+      <small>A unique machine-readable name. Can only contain lowercase letters, numbers, and underscores.</small>
+    </div>
+
+    <div class="form-item form-type-machine-name form-required">
+      <label class="required" for="foo">Machine-readable name</label>
+
+      <input type="text" id="foo" value="" size="30" maxlength="64" required="">
+
+      <small>A unique machine-readable name. Can only contain lowercase letters, numbers, and underscores.</small>
+    </div>
+*/
+
+
+
+/*
+textfield autocomplete
+ */
+html.js input.form-autocomplete {
+  // background-image: url(../../misc/throbber.gif);
+  background-position: 100% 10px; /* LTR */
+  background-repeat: no-repeat;
+}
+html.js input.throbbing {
+  background-position: 100% -20px; /* LTR */
+}
+
+
+/*
+Textarea
+------------------------------
+
+    <div class="form-item form-type-textarea">
+      <label for="edit-textarea">Textarea</label>
+
+      <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea">
+        <textarea id="edit-textarea" name="textarea" cols="60" rows="5">
+        Neo camur cogo antehabeo saepius roto lobortis verto aliquip typicus roto camur quidem vulputate ea obruo lenis os antehabeo comis suscipere virtus nisl gravis. Eros abluo lenis esca abbas commodo abico illum abdo si capto in erat adipiscing typicus suscipit.
+        </textarea>
+
+        <div class="grippie"></div>
+      </div>
+
+    <small>Praemitto dignissim abigo usitas refero iustum. </small>
+    </div>
+
+ */
+.form-textarea-wrapper textarea,
+textarea{
+  min-height:40rem;
+  // width:80%;
+  border:1px solid $gray-light;
+  padding:0.5rem;
+  transition: all 0.3s;
+  @include border-radius(3px);
+
+  @include breakpoint($medium_down){
+    min-height:20rem;
+    width:98%;
+  }//breaktpoint: $medium_down
+
+  &:hover{
+    // width:100%;
+    border:1px solid $form-border-color;
+    border:1px solid $blue;
+    @include box-shadow(0 0 3px rgba($blue, 0.7));
+  }
+  &:focus{
+    // width:100%;
+    background: $gray-light;
+    color:$blue;
+    border:1px solid $blue;
+    @include box-shadow(0 0 3px rgba($blue, 0.7));
+  }
+  &:disabled{
+    border:1px dashed $gray-light;
+    @include box-shadow(0 0 3px rgba(black, 0.4));
+    background:$gray-light;
+    color:$gray-light;
+    font-style: italic;
+  }
+}
+
+
+/*
+checkbox
+-----------------------------
+
+    <div class="form-item form-type-checkbox">
+      <input type="checkbox" id="foo" name="checkbox" value="1">
+      <label for="foo">Checkbox</label>
+      <small>Quia ymo loquor pertineo zelus exerci. </small>
+    </div>
+
+*/
+input[type="checkbox"]{
+
+}
+input[type="checkbox"] + label{
+  text-align:left;
+  display:inline-block;
+  min-width: 20rem;
+}
+
+/*
+Checkboxes
+------------------------------------------------------------------------------
+
+    <div class="form-item form-type-checkboxes">
+      <label for="foo">Checkboxes</label>
+      <div id="foo" class="form-checkboxes">
+
+        <div class="form-item form-type-checkbox">
+          <input type="checkbox" id="foo" name="checkboxes[one]" value="one">
+          <label for="foo">Qui oppeto decet</label>
+        </div>
+
+        <div class="form-item  form-type-checkbox">
+          <input type="checkbox" id="bar" name="checkboxes[two]" value="two">
+          <label for="bar">Quadrum exerci lobortis</label>
+          <small>Roto mos secundum si quadrum nutus. </small>
+        </div>
+
+        <div class="form-item  form-type-checkbox">
+          <input type="checkbox" id="baz" name="checkboxes[three]" value="three">
+          <label for="baz">Praemitto humo adipiscing</label>
+        </div>
+
+      </div>
+      <small>In venio oppeto iaceo vereor damnum. </small>
+    </div>
+
+*/
+.form-checkboxes{
+  // padding-left: $form-label-width + 2;
+}
+
+.form-type-checkboxes .form-type-checkbox{
+  padding:0;
+  border:none;
+}
+.form-type-checkboxes .form-checkboxes{
+  display: inline-block;
+  width:$form-input-width;
+}
+
+/*
+checkbox disabled
+
+    <div class="form-item form-type-checkbox">
+      <input disabled="disabled" type="checkbox" id="foo" name="checkbox" value="1">
+      <label for="foo">Checkbox</label>
+      <small>Quia ymo loquor pertineo zelus exerci. </small>
+    </div>
+
+ */
+input[type="checkbox"]:disabled{
+  opacity:0.5;
+}
+
+/*
+radio
+-------------------------------
+
+    <div class="form-item  form-type-radio">
+      <input type="radio" id="foo" name="radio">
+      <label for="foo">Radio</label>
+      <small>Meus hos aptent dolor gemino plaga. But why would you ever use a single radio?</small>
+    </div>
+ */
+
+//.field-type-list-text
+
+input[type="radio"] + label{
+  text-align:left;
+  display:inline-block;
+  min-width: 20rem;
+}
+
+
+/*
+Radios
+-------------------------------
+
+
+    <div class="form-item form-type-radios">
+      <label for="edit-radios">Radios</label>
+      <div id="edit-radios" class="form-radios">
+
+        <div class="form-item form-type-radio">
+          <input type="radio" id="edit-radios-one" name="radios" value="one">
+          <label for="edit-radios-one">Pagus iriure sit</label>
+        </div>
+
+        <div class="form-item form-type-radio">
+          <input type="radio" id="edit-radios-two" name="radios" value="two">
+          <label for="edit-radios-two">Brevitas quidem pertineo</label>
+          <small>Ut exerci voco autem immitto tego. </small>
+        </div>
+
+        <div class="form-item form-type-radio">
+          <input type="radio" id="edit-radios-three" name="radios" value="three">
+          <label for="edit-radios-three">Refoveo duis wisi</label>
+        </div>
+
+      </div>
+
+        <small>Jumentum ibidem erat importunus wisi causa. </small>
+      </div>
+
+*/
+
+.form-radios{
+  margin-left: $form-label-width + 8;
+}
+
+
+/*
+Radio disabled
+-------------------------------
+
+    <div class="form-item  form-type-radio">
+      <input disabled="disabled" type="radio" id="foo" name="radio">
+      <label for="foo">Radio</label>
+      <small>Meus hos aptent dolor gemino plaga. But why would you ever use a single radio?</small>
+    </div>
+ */
+input[type="radio"]:disabled{
+  opacity:0.5;
+}
+
+/*
+Select
+------------------------
+
+    <div class="form-item form-type-select">
+      <label for="edit-select">Select</label>
+      <select id="edit-select" name="select">
+       <option value="one">Cogo proprius valde</option>
+       <option value="two">Consectetuer roto ibidem</option>
+       <option value="three">Dignissim verto odio</option>
+      </select>
+
+      <small>Humo defui damnum defui secundum gemino. </small>
+    </div>
+
+ */
+
+
+select{
+  min-width: 30rem;
+  min-height:2rem;
+  background:transparent;
+  font-size:1.7rem;
+  border:1px solid $form-border-color;
+  padding:0.5rem;
+  transition: all 1s;
+  // -webkit-appearance: none;
+
+  &:hover{
+    border:1px solid $form-border-color;
+    border:1px solid $blue;
+    @include box-shadow(0 0 3px rgba($blue, 0.7));
+    min-width: 31rem;
+  }
+  select:focus{
+    background: $gray-light;
+    color:$blue;
+    border:1px solid $blue;
+    @include box-shadow(0 0 3px rgba($blue, 0.7));
+  }
+
+}
+
+/*
+Select disabled
+------------------------
+
+    <div class="form-item form-type-select">
+      <label for="edit-select">Select</label>
+      <select disabled="disabled" id="edit-select" name="select">
+       <option value="one">Cogo proprius valde</option>
+       <option value="two">Consectetuer roto ibidem</option>
+       <option value="three">Dignissim verto odio</option>
+      </select>
+
+      <small>Humo defui damnum defui secundum gemino. </small>
+    </div>
+
+ */
+select:disabled{
+
+}
+
+
+
+/*
+Select multiple
+-------------------------
+
+    <div class="form-item form-type-select">
+      <label for="edit-select-multiple">Select (multiple)</label>
+      <select multiple="multiple" name="select_multiple[]" id="edit-select-multiple">
+        <option value="one">Qui gravis nulla</option>
+        <option value="two">Nutus luctus genitus</option>
+        <option value="three">Wisi scisco nibh</option>
+      </select>
+      <small>Et fere antehabeo fere quae velit. </small>
+    </div>
+
+ */
+
+
+/*
+Select multiple disabled
+-------------------------
+
+    <div class="form-item form-type-select">
+      <label for="edit-select-multiple">Select (multiple)</label>
+      <select disabled="disabled" multiple="multiple" name="select_multiple[]" id="edit-select-multiple">
+        <option value="one">Qui gravis nulla</option>
+        <option value="two">Nutus luctus genitus</option>
+        <option value="three">Wisi scisco nibh</option>
+      </select>
+      <small>Et fere antehabeo fere quae velit. </small>
+    </div>
+
+ */
+
+
+
+
+
+/*
+inline elements
+----------------------------------------------
+
+    <div id="edit-inline" class="form-item form-type-item">
+      <label for="edit-inline">Inline elements</label>
+
+      <div class="container-inline form-wrapper" id="edit-container">
+        <div class="form-item form-type-select">
+          <label for="edit-select--3">Select</label>
+          <select id="edit-select--3" name="select">
+            <option value="one">Qui gravis nulla</option>
+            <option value="two">Nutus luctus genitus</option>
+            <option value="three">Wisi scisco nibh</option>
+          </select>
+        </div>
+        <div class="form-item form-type-textfield">
+          <label for="edit-textfield--3">Textfield</label>
+          <input type="text" id="edit-textfield--3" name="textfield" value="" size="30" maxlength="128">
+        </div>
+      </div>
+    </div>
+*/
+
+
+/*
+Fieldset
+-------------------------
+
+    <fieldset class="collapsible collapse-processed" id="edit-collapsible">
+      <legend>
+        <span class="fieldset-legend">
+          <a class="fieldset-title" href="#">
+            <span class="fieldset-legend-prefix element-invisible">Hide</span>
+            Collapsible fieldset
+          </a>
+          <span class="summary">
+          </span>
+        </span>
+      </legend>
+
+      <div class="fieldset-wrapper">
+        <div class="fieldset-description">Fieldset description</div>
+      </div>
+    </fieldset>
+
+ */
+fieldset{
+  border: none;
+  border-bottom:1px solid rgba($blue, 0.5);
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+}
+.fieldset-legend{ }
+
+fieldset legend a{
+  display:block;
+  @extend .fa;
+  @extend .fa-plus-square;
+  text-transform: uppercase;
+  font-size:2rem;
+  line-height:3rem;
+  height:3rem;
+}
+fieldset legend a:hover{
+  text-decoration: none;
+}
+fieldset.collapsed legend a{
+  @extend .fa;
+  @extend .fa-minus-square;
+}
+fieldset.collapsed legend a{
+}
+html.js fieldset.collapsed{
+  height: 3rem;
+  padding-bottom:1rem;
+  margin-bottom:1rem;
+}
+
+
+
+/*
+Fieldset collapsed
+-------------------------
+
+    <fieldset class="collapsible collapsed collapse-processed" id="edit-collapsible">
+      <legend>
+        <span class="fieldset-legend">
+          <a class="fieldset-title" href="#">
+            <span class="fieldset-legend-prefix element-invisible">Hide</span>
+            Collapsible fieldset
+          </a>
+          <span class="summary">
+          </span>
+        </span>
+      </legend>
+
+      <div class="fieldset-wrapper">
+        <div class="fieldset-description">Fieldset description</div>
+      </div>
+    </fieldset>
+
+ */
+
+
+
+/*
+file
+==================
+
+
+    <div class="form-type-file">
+      <label for="edit-file">File</label>
+      <input type="file" id="edit-file" name="files[file]">
+    </div>
+
+*/
+
+
+
+/*
+ajax wrapper file
+---------------------------
+
+
+    <div id="edit-managed-file-ajax-wrapper">
+      <div class="form-type-managed-file">
+        <label for="edit-managed-file">Managed file</label>
+
+        <div id="edit-managed-file" class="form-managed-file">
+          <input type="file" id="edit-managed-file-upload" name="files[managed_file]">
+          <input type="submit" id="edit-managed-file-upload-button"
+          name="managed_file_upload_button" value="Upload" class="ajax-processed">
+
+          <input type="hidden" name="managed_file[fid]" value="0">
+        </div>
+
+      </div>
+    </div>
+
+ */
+
+
+/*
+Image widget
+------------------------------------------------------
+
+ */
+.field-type-image{
+  label{
+    display:block
+  }
+}
+
+.image-widget{
+  margin-left:$form-label-width + 2;
+  label{
+    display:inline-block;
+  }
+  input[type="text"]{
+    width: $form-input-width;
+    display:inline-block
+  }
+  small{
+    // margin-left:0;
+  }
+}
+// .image-preview{
+//   background:blue;
+//   display: inline-block;
+//   width:40%
+// }
+// .image-widget-data{
+//   background:green;
+//   display: inline-block;
+//   width:40%
+
+// }
+
+.image-widget-data div{
+  border-bottom:1px solid $form-border-color;
+  margin-bottom: 1rem;
+  padding-bottom:1rem;
+}
+
+.image-widget-data  input[type="submit"]{
+  border:1px solid red;
+}
+
+/*
+Form type date
+ */
+
+.form-type-date{
+  select{
+    min-width:10rem;
+  }
+  div{display:inline}
+}
+
+
+/*
+Form buttons
+--------------------------
+
+    <button>click me</button>
+
+    <div class="form-actions form-wrapper" id="edit-actions">
+      <input type="submit" id="edit-submit" name="op" value="Save" class="form-submit">
+      <input type="submit" id="edit-delete" name="op" value="Delete" class="form-submit">
+    </div>
+
+
+ */
+
+.form-actions{
+  text-align: right;
+  padding:1rem;
+
+  input{
+    margin-left:1rem;
+  }
+}
+
+button{
+  // See ../sass/component/_buttons.scss
+  //@include sassy-button("simple", 4px, 15px, #fff , #e6e6e6, #333);
+}
+
+input[type="submit"]{
+  //@include sassy-button("simple", 4px, 15px, #fff , #e6e6e6, #333);
+}
+
+#edit-submit{
+  @extend .fa;
+  @extend .fa-minus-square;
+}
+#edit-delete{
+  color:#D00;
+}
+
+
+/*
+small
+---------------------------
+tool tip helper used for documentation
+ */
+.form-item{
+  position:relative;
+}
+form small{
+  position:absolute;
+  z-index:100;
+  top:1rem;
+  left:$form-input-width + $form-label-width;
+  width:25rem;
+  min-height:3rem;
+  padding: 1rem;
+  @include border-radius(2px);
+  background: rgba($black, 0.8);
+  border:1px solid transparent;
+  color:$white;
+  transition: all 1s;
+  opacity:0;
+}
+
+.field-type-text,
+.field-type-list-text,
+.field-type-image,
+.form-type-password{
+  &:hover small{
+    @include arrow(left, rgba($black,0.8));
+    left: $form-input-width + $form-label-width + 5;
+    opacity:1;
+  }
+}
+
+
+/*
+Fixes
+ */
+
+#rpp-data-panes-feed-form{
+  @extend .l-width;
+
+  input[type="submit"]{
+    margin-top:3rem;
+    float:right
+  }
+}
+
+#rpp-data-panes-admin-dashboard-content-type-filter-form{
+  .form-item{
+    display: inline-block;
+    width:40%
+  }
+  label{
+    width: 20%;
+  }
+  input[type="text"]{
+    width:50%;
+  }
+  #edit-submit{
+
+  }
+}
+
+#rpp-data-panes-total-stats-content-type-filter-form,
+#rpp-data-panes-partner-dashboard-content-type-filter-form{
+  label{
+    width:20%
+  }
+  .form-item{
+    display: inline-block;
+    width:45%;
+  }
+}
+
+
+#views-exposed-form-leads-leads{
+  #edit-uid-wrapper{
+
+  }
+  #edit-country-nid-wrapper{
+
+  }
+  #edit-conversion-status-wrapper{
+
+  }
+  #edit-created-wrapper{
+    width:40%;
+    display: inline-block;
+    border-bottom:1px solid $form-divider-color;
+    .form-item{ border:none; }
+  }
+  #edit-created-1-wrapper{
+    width:40%;
+    display: inline-block;
+    border-bottom:1px solid $form-divider-color;
+    .form-item{ border:none; }
+  }
+
+  input[type="submit"]{
+
+  }
+}

@@ -1,0 +1,51 @@
+/*
+Effects
+
+Different grafic effects for design elements shadings, circles etc
+
+Markup:
+<div class="circle">
+<img src="public/images/coffee-400.jpg" alt="coffee">
+</div>
+<div>
+<p class="circle">
+<img src="public/images/coffee-400.jpg" alt="coffee">
+</div>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, inventore, totam, voluptatem, id tempore nulla voluptatibus architecto in eaque eos animi similique sed omnis harum sit deserunt iure consequatur temporibus!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, inventore, totam, voluptatem, id tempore nulla voluptatibus architecto in eaque eos animi similique sed omnis harum sit deserunt iure consequatur temporibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, inventore, totam, voluptatem, id tempore nulla voluptatibus architecto in eaque eos animi similique sed omnis harum sit deserunt iure consequatur temporibus!
+</p>
+
+Styleguide 2.1
+*/
+
+.circle img{
+  width: 10rem;
+  height: 10rem;
+  @include border-radius(5rem);
+  border:4px dotted $black;
+}
+
+.content .circle img{
+  padding: 0;
+  margin-right: 1rem;
+}
+
+/*
+Shadow
+
+descrption.
+
+Markup:
+<div  class="shadow">
+<img src="public/images/coffee-400.jpg" alt="coffee">
+</div>
+<figure class="shadow">
+  <img src="public/images/coffee-400.jpg" alt="coffee">
+  <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</figcaption>
+</figure>
+
+Styleguide 2.2
+*/
+
+.shadow > * {
+   @include box-shadow(#000 3px 3px 8px -4px);
+}

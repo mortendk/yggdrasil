@@ -1,0 +1,86 @@
+/*
+Mobile Menu icons
+===============================
+
+Mobile menu icons
+--------------------------------------------------------------------------------
+A quick & easy way to add a menu handler for mobile devices
+
+    <header role="bannerinfo">
+      <div class="l-smalldevice-top">
+        <a href="/"><div class="smalldevice-logo">$sitename </div></a>
+        <div class="smalldevice-icon"> = </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li> menu item</li>
+          <li> menu item</li>
+          <li> menu item</li>
+        </ul>
+      </nav>
+
+*/
+
+/*
+Drupal templates:
+--------------------------------------
+templates/panes/panels-pane--system-main-menu.tpl.php
+@todo: add breakpoints
+*/
+
+//-- mobile menu Structure
+.l-smalldevice-top{
+  display: block;
+  width: 100%;
+  height:5rem;
+  background:#fff;
+
+  //hide it from all bigger devices
+  @include breakpoint($medium-up) {
+    display: none;
+  }
+}
+
+.smalldevice-logo{
+  float:left;
+  overflow:hidden;
+  background: transparent url(../images/logo-smalldevice.png) no-repeat center center;
+  text-indent:-999px;
+  width:84%;
+  height:5rem;
+  display:block;
+}
+
+.smalldevice-icon{
+    @extend .fa;
+    @extend .fa-plus-square;
+    @include a-linkcolor(black, gray , none);
+
+    float:right;
+    display: block;
+    margin:1rem 1% 0 0;
+    width:2rem;
+    height:2rem;
+    font-size: 2rem;
+    line-height:2rem;
+    cursor: pointer;
+}
+
+.smalldevice-icon.active{
+   @extend .fa-minus-square;
+   @include a-linkcolor(black, gray , none);
+}
+
+header[role="banner"] nav{
+  @include breakpoint($small) {
+    display: none;
+    li{display:block}
+    li a{
+      display:block;
+      border-bottom:3px solid $black;
+      padding:1rem;
+    }
+  }
+}
+

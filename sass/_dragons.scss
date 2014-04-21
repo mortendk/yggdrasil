@@ -1,0 +1,56 @@
+/*
+Dragons
+============
+
+Dragons
+============
+Here be Dragons! 
+All the dirty small elements that needs to be added
+
+*/
+
+
+//-----------Small admin fixes -----------------------------------
+//@todo remove this from layouts & lay in its own space
+//default hide drupals admin-menu on smaller devices
+#admin-menu{
+  display:none;
+  @include breakpoint($large) {display:block}
+}
+
+html body.admin-menu{ 
+  margin-top: 0px !important; 
+  @include breakpoint($large){
+    padding-top:30px;
+  }
+  @include breakpoint($xlarge){
+    padding-top:30px;
+  }
+
+}
+
+@include breakpoint($large){
+  body.admin-menu header[role="banner"]{
+    top:40px;
+  }
+}
+
+@include breakpoint($xlarge){
+  body.admin-menu header[role="banner"]{
+    top:40px;
+  }
+}
+
+
+.test-layout{
+  ul li,
+  div,
+  article{
+    min-height:10rem;
+    background: rgba($blue, 0.5);
+    border-top:4px $blue solid;
+    margin-bottom: 1rem;
+  }
+
+}
+

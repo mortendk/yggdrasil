@@ -1,0 +1,174 @@
+/*
+Mixins
+
+Styleguide 5
+*/
+
+/*
+mixin: linkcolor
+
+a mixin for easy link coloring
+
+$link - main links color
+$hover - hover color
+$decorationhover - hover decoration default underline
+$visited: - visited color
+$focus  - hover color default same as link
+$decoration - textdecoration
+<pre><code>
+@mixin linkcolor($link, $hover:$link, $decorationhover:underline, $visited: $link, $focus : $hover,$decoration: none){
+  a{color:$link; text-decoration:$decoration; }
+  a:link   { color:$link;}
+  a:visited{ color:$visited;}
+  a:focus  { color:$focus;}
+  a:hover  { color:$hover; text-decoration:$decorationhover;}
+}
+</code></pre>
+
+Styleguide 5.1
+*/
+
+@mixin linkcolor($link, $hover:$link, $decorationhover:underline, $visited: $link, $focus : $hover,$decoration: none){
+  a{color:$link; text-decoration:$decoration; }
+  a:link { color:$link;}
+  a:visited{ color:$visited;}
+  a:focus  { color:$focus;}
+  a:hover  { color:$hover; text-decoration:$decorationhover;}
+}
+
+@mixin a-linkcolor($link, $hover:$link, $decorationhover:underline, $visited: $link, $focus : $hover,$decoration: none){
+  &{color:$link; text-decoration:$decoration; }
+  &:link   { color:$link;}
+  &:visited{ color:$visited;}
+  &:focus  { color:$focus;}
+  &:hover  { color:$hover; text-decoration:$decorationhover;}
+}
+
+
+/*
+REM fix
+--------------
+
+A fix so we can use rem & support ie8 & its retarded friends
+$size is the em value
+@include remfix('width', 1.5);
+
+*/
+@mixin remfix($prop, $size){
+ #{$prop} : ($size * 10) + px;
+ #{$prop}: $size + rem;
+}
+
+
+/*
+fontsize
+-----------------------
+@mixin fontsize($size:1.6, $line: $size * 1.5){
+  font-size:   ($size * 10) + px;
+  font-size:   $size + rem;
+  line-height: ($line * 10) + px;
+  line-height: $line + rem;
+}
+
+ */
+@mixin fontsize($size:1.6, $line: $size * 1.5){
+  font-size:   ($size * 10) + px;
+  font-size:   $size + rem;
+  line-height: ($line * 10) + px;
+  line-height: $line + rem;
+}
+
+
+/*
+Arrow
+------------------------------------
+adds an arrow to a field
+ */
+@mixin arrow($direction, $color, $size: 7px){
+  &:before{
+    position: absolute;
+    z-index:100;
+    border-right-color: $color;
+    display: inline-block;
+    content: '';
+
+    @if $direction == 'left'{
+      left: -$size;
+    // top: 1rem;
+      border-top: $size solid transparent;
+      border-right: $size solid $color;
+      border-bottom: $size solid transparent;
+    }
+    @elseif $direction == 'right'{
+      right: - ($size - 1px);
+       // top: 1rem;
+      border-bottom: 5px solid transparent;
+      border-top: 5px solid transparent;
+      border-left: 5px solid $color;
+    }
+    @elseif $direction == 'top'{
+      top: - ($size - 2px );
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid $color;
+    }
+    @elseif $direction == 'bottom'{
+      bottom: - ($size - 2px);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid $color;
+
+    }
+  }
+}
+
+
+/*
+Circle
+-------------------------------------------
+makes stuff round ...
+ */
+@mixin circle($width: 10rem){
+  width: $width;
+  height: $width;
+  @include border-radius( $width / 2 );
+}
+
+@mixin circle-icon($width: 3rem,$color:#fff, $background: $blue){
+  background-color: $background;
+  color:$color;
+  width:$width;
+  height:$width;
+  line-height:$width;
+  font-size: $width / 2;
+  text-align: center;
+  @include border-radius($width);
+  overflow:hidden;
+  display:inline-block;
+}
+
+/*
+Helptool
+-----------------------
+    <a href="http://twitter.com/bimse" class="test circle" data-tooltip="goto twitter">
+      <i class="fa fa-twitter"></i><span>twitter!</span>
+    </a>
+ */
+@mixin helptool($direction:top, $color: $black){
+  position: absolute;
+  z-index: 1000;
+  display: inline-block;
+  min-width:10rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  padding: 1rem;
+  text-align: left;
+  color:#fff;
+  background: rgba($color, 0.8);
+  @include border-radius(2px);
+  //TODO: create top, bottom, right, left helpers
+  @include arrow($direction, rgba($color,0.8));
+  top:1.2rem;
+  left:0rem;
+
+}

@@ -1,0 +1,69 @@
+/*
+Layout Float 3
+===============================
+
+Layout Float 3
+--------------------------------
+Floats elements breaks them on a count of 3,2,1
+Detects on a <article> or <ul><li>
+small: 1
+medium: 2
+large: 3
+
+
+    <section class="lf-3"> 
+      <article>foo</article>
+      <article>foo</article>      
+      <article>foo</article>      
+      <article>foo</article>      
+      <article>foo</article>
+      <article>foo</article>      
+      <article>foo</article>      
+      <article>foo</article>      
+    <section>
+
+    <section class="lf-3"> 
+      <ul>
+      <li>foo</li>
+      <li>foo</li>      
+      <li>foo</li>      
+      <li>foo</li>      
+      <li>foo</li>
+      <li>foo</li>      
+      <li>foo</li>      
+      <li>foo</li>      
+      </ul>
+    <section>
+
+ */
+%lf-3,
+.lf-3{
+  @extend %cf;
+
+  @include breakpoint($medium) { 
+    > div,
+    > article,
+    > ul li{ 
+      @include float-span(6, $grid:12);
+    }
+    > div:nth-of-type(2n),
+    > article:nth-of-type(2n),
+    > ul li:nth-of-type(2n) {      
+      @include float-span(6, last, $grid:12); 
+    } 
+  }
+
+  @include breakpoint($large) {
+    > div,
+    > article,
+    > ul li{
+      @include float-span(4, $grid:12);
+    }
+    > div:nth-of-type(3n),    
+    > article:nth-of-type(3n),
+    > ul li:nth-of-type(3n) { 
+      @include float-span(4, last, $grid:12); 
+    }
+  }
+
+}

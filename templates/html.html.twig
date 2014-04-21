@@ -28,18 +28,36 @@
 
 
 #}
+{% set classes %}
+  {% if nodetype %}
+    page-type--{{ nodetype }}
+  {% endif %}
+
+  {% if is_front %}
+    page--front
+  {% endif %}
+
+  {% if logged_in %}
+    user--logged-in
+  {% endif %}
+
+{% endset %}
+
 <!DOCTYPE html>
-<html class="foo {{ html_attributes.class }}" {{ html_attributes }}>
+<html {{ html_attributes }}>
   <head>
     {{ head }}
     <title>{{ head_title }}</title>
     {{ styles }}
     {{ scripts }}
   </head>
-  <body class="{{ attributes.class }} " {{ attributes }}>
-    <a href="#main-content" class="visually-hidden focusable">
+
+  <body class="page-type--{{ page_type }} {{ attributes.class }}"{{ attributes }}>
+    <a href="#main-content" class="visually-hidden focusable skip-link">
       {{ 'Skip to main content'|t }}
     </a>
+
+  {{ classes }}
 
     {{ page_top }}
     {{ page }}
