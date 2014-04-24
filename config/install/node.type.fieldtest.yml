@@ -1,0 +1,19 @@
+type: fieldtest
+name: fieldtest
+description: 'The epic field test content type'
+help: ''
+has_title: true
+title_label: Title
+settings:
+  node:
+    preview: 0
+    options:
+      status: true
+      promote: true
+      sticky: false
+      revision: false
+    submitted: true
+status: true
+uuid: 3ae7a83f-0c95-486c-af05-5d8cc0393e28
+langcode: en
+dependencies: {  }

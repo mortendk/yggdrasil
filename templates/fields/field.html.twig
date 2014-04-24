@@ -34,7 +34,7 @@
       {# --- single value with label --- #}
       <div class="field--single {{ attributes.class }}"{{ attributes }}>
         <div class="field__label"{{ title_attributes }}>{{ label }}</div>
-        <div class="field__item" {{ content_attributes }} {{ item_attributes[delta] }}>WTF {{ item }}</div>
+        <div class="field__item" {{ content_attributes }} {{ item_attributes[delta] }}>{{ item }}</div>
       </div>
     {% endif %}
     {# end label_hidden#}
